@@ -46,14 +46,14 @@ namespace Esgis_Paint
             g = panel1.CreateGraphics();
 
             //Initialisations
-            pen_state = false;
+            pen_state = true;
             eraser_state = false;
             specialForm_enabled = false;
             drawing = false;
 
             log = new Journal();
-            eraser_width = 5;
-            pen_width = 5;
+            eraser_width = 6;
+            pen_width = 6;
             pen_color = Color.Black;
             pen = new Pen(Color.Black, (int) pen_width);
             eraser = new Pen(Color.White, (int) eraser_width);
@@ -219,7 +219,7 @@ namespace Esgis_Paint
             if (result == DialogResult.OK)
             {
                 pen.Color = colorDialog1.Color;
-                pictureBox_ColorActual.BackColor = pen.Color;
+                ChangePenColor();
             }
 
         }
@@ -227,31 +227,37 @@ namespace Esgis_Paint
         private void pictureBox_Color1_Click(object sender, EventArgs e)
         {
             pen.Color = pictureBox_Color1.BackColor;
+            ChangePenColor();
         }
 
         private void pictureBox_Color2_Click(object sender, EventArgs e)
         {
             pen.Color = pictureBox_Color2.BackColor;
+            ChangePenColor();
         }
 
         private void pictureBox_Color3_Click(object sender, EventArgs e)
         {
             pen.Color = pictureBox_Color3.BackColor;
+            ChangePenColor();
         }
 
         private void pictureBox_Color4_Click(object sender, EventArgs e)
         {
             pen.Color = pictureBox_Color4.BackColor;
+            ChangePenColor();
         }
 
         private void pictureBox_Color5_Click(object sender, EventArgs e)
         {
             pen.Color = pictureBox_Color5.BackColor;
+            ChangePenColor();
         }
 
         private void pictureBox_Color6_Click(object sender, EventArgs e)
         {
             pen.Color = pictureBox_Color6.BackColor;
+            ChangePenColor();
         }
 
         #endregion
@@ -310,6 +316,7 @@ namespace Esgis_Paint
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
+            ChangeMouseIcon();
             if (pen_state) //crayon déjà cliqué
             {
                 old = e.Location;
@@ -332,6 +339,7 @@ namespace Esgis_Paint
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
+            ChangeMouseIcon();
             if (pen_state) //Pen enable
             {
                 if (e.Button == MouseButtons.Left)
@@ -605,6 +613,21 @@ namespace Esgis_Paint
                 printDocument1.Print();
                 log.WriteToLogFile("print", "Temp. unsaved Sketch");
             }
+        }
+        /// <summary>
+        /// Change mouse icon to cross
+        /// </summary>
+        private void ChangeMouseIcon()
+        {
+            panel1.Cursor = Cursors.Cross;
+        }
+
+        /// <summary>
+        /// Change pen color 
+        /// </summary>
+        private void ChangePenColor()
+        {
+            pictureBox_ColorActual.BackColor = pen.Color;
         }
 
         #endregion
