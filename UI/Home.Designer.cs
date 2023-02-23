@@ -53,7 +53,7 @@
             this.btn_new.Name = "btn_new";
             this.btn_new.Size = new System.Drawing.Size(131, 46);
             this.btn_new.TabIndex = 0;
-            this.btn_new.Text = "Nouveau";
+            this.btn_new.Text = "Mở";
             this.btn_new.UseVisualStyleBackColor = true;
             this.btn_new.Click += new System.EventHandler(this.btn_new_Click);
             // 
@@ -65,7 +65,7 @@
             this.btn_open.Name = "btn_open";
             this.btn_open.Size = new System.Drawing.Size(131, 46);
             this.btn_open.TabIndex = 1;
-            this.btn_open.Text = "Ouvrir";
+            this.btn_open.Text = "Hình";
             this.btn_open.UseVisualStyleBackColor = true;
             this.btn_open.Click += new System.EventHandler(this.btn_open_Click);
             // 
@@ -76,9 +76,9 @@
             this.label1.Location = new System.Drawing.Point(167, 66);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(362, 29);
+            this.label1.Size = new System.Drawing.Size(312, 29);
             this.label1.TabIndex = 5;
-            this.label1.Text = "Dessiner ce que vous voulez ";
+            this.label1.Text = "VẼ THEO CÁCH CỦA BẠN";
             // 
             // label2
             // 
@@ -87,9 +87,9 @@
             this.label2.Location = new System.Drawing.Point(208, 132);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(268, 25);
+            this.label2.Size = new System.Drawing.Size(330, 25);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Pour commencer, cliquez sur ";
+            this.label2.Text = "Nếu muốn vẽ hãy nhấn vào nút \"Mở\"";
             // 
             // label3
             // 
@@ -98,9 +98,9 @@
             this.label3.Location = new System.Drawing.Point(131, 249);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(413, 25);
+            this.label3.Size = new System.Drawing.Size(356, 25);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Pour modifier une image existante, cliquez sur ";
+            this.label3.Text = "Muốn mở hình ảnh hãy nhấn vào \"Hình\"";
             // 
             // menuStrip1
             // 
@@ -122,42 +122,42 @@
             this.journalToolStripMenuItem,
             this.fermerToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
-            this.fichierToolStripMenuItem.Text = "Fichier";
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.fichierToolStripMenuItem.Text = "Tệp";
             // 
             // nouveauDessinToolStripMenuItem
             // 
             this.nouveauDessinToolStripMenuItem.Name = "nouveauDessinToolStripMenuItem";
-            this.nouveauDessinToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.nouveauDessinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nouveauDessinToolStripMenuItem.Text = "Nouveau dessin";
             this.nouveauDessinToolStripMenuItem.Click += new System.EventHandler(this.nouveauDessinToolStripMenuItem_Click);
             // 
             // ouvrirUneImageToolStripMenuItem
             // 
             this.ouvrirUneImageToolStripMenuItem.Name = "ouvrirUneImageToolStripMenuItem";
-            this.ouvrirUneImageToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.ouvrirUneImageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.ouvrirUneImageToolStripMenuItem.Text = "Ouvrir une image";
             this.ouvrirUneImageToolStripMenuItem.Click += new System.EventHandler(this.ouvrirUneImageToolStripMenuItem_Click);
             // 
             // journalToolStripMenuItem
             // 
             this.journalToolStripMenuItem.Name = "journalToolStripMenuItem";
-            this.journalToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.journalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.journalToolStripMenuItem.Text = "Journal";
             this.journalToolStripMenuItem.Click += new System.EventHandler(this.journalToolStripMenuItem_Click);
             // 
             // fermerToolStripMenuItem
             // 
             this.fermerToolStripMenuItem.Name = "fermerToolStripMenuItem";
-            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
+            this.fermerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.fermerToolStripMenuItem.Text = "Fermer";
             this.fermerToolStripMenuItem.Click += new System.EventHandler(this.fermerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(84, 24);
-            this.toolStripMenuItem1.Text = "A propos";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(88, 24);
+            this.toolStripMenuItem1.Text = "Phiên bản";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // btn_close
