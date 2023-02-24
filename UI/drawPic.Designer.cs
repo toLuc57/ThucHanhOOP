@@ -51,27 +51,23 @@
             this.pictureBox_Color4 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox_Outils = new System.Windows.Forms.GroupBox();
+            this.btnFill = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_ZoomOut = new System.Windows.Forms.Button();
             this.btn_ZoomIn = new System.Windows.Forms.Button();
             this.btn_pencil = new System.Windows.Forms.Button();
             this.btn_eraser = new System.Windows.Forms.Button();
             this.groupBox_Formes = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.picRect = new System.Windows.Forms.PictureBox();
             this.picEllipse = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.picLine = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox_Fichier = new System.Windows.Forms.GroupBox();
+            this.btnReplay = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
@@ -83,6 +79,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pic = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnUndo = new System.Windows.Forms.Button();
+            this.btnRedo = new System.Windows.Forms.Button();
+            this.groupBox_Toolbar = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).BeginInit();
             this.groupBox_Epaisseur.SuspendLayout();
@@ -96,24 +95,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color4)).BeginInit();
             this.groupBox_Outils.SuspendLayout();
             this.groupBox_Formes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEllipse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox_Fichier.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.panel1.SuspendLayout();
+            this.groupBox_Toolbar.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -344,20 +338,32 @@
             // groupBox_Outils
             // 
             this.groupBox_Outils.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Outils.Controls.Add(this.btnFill);
             this.groupBox_Outils.Controls.Add(this.btn_clear);
             this.groupBox_Outils.Controls.Add(this.btn_ZoomOut);
             this.groupBox_Outils.Controls.Add(this.btn_ZoomIn);
             this.groupBox_Outils.Controls.Add(this.btn_pencil);
             this.groupBox_Outils.Controls.Add(this.btn_eraser);
             this.groupBox_Outils.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Outils.Location = new System.Drawing.Point(37, 42);
+            this.groupBox_Outils.Location = new System.Drawing.Point(37, 140);
             this.groupBox_Outils.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Outils.Name = "groupBox_Outils";
             this.groupBox_Outils.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Outils.Size = new System.Drawing.Size(108, 331);
+            this.groupBox_Outils.Size = new System.Drawing.Size(108, 369);
             this.groupBox_Outils.TabIndex = 17;
             this.groupBox_Outils.TabStop = false;
             this.groupBox_Outils.Text = "Outils";
+            // 
+            // btnFill
+            // 
+            this.btnFill.Image = global::Esgis_Paint.Properties.Resources.icons8_fill_color_32;
+            this.btnFill.Location = new System.Drawing.Point(21, 250);
+            this.btnFill.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFill.Name = "btnFill";
+            this.btnFill.Size = new System.Drawing.Size(60, 46);
+            this.btnFill.TabIndex = 20;
+            this.btnFill.UseVisualStyleBackColor = true;
+            this.btnFill.Click += new System.EventHandler(this.btnFill_Click);
             // 
             // btn_clear
             // 
@@ -365,7 +371,7 @@
             this.btn_clear.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btn_clear.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btn_clear.Location = new System.Drawing.Point(13, 276);
+            this.btn_clear.Location = new System.Drawing.Point(13, 315);
             this.btn_clear.Margin = new System.Windows.Forms.Padding(4);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(79, 46);
@@ -377,7 +383,7 @@
             // btn_ZoomOut
             // 
             this.btn_ZoomOut.Image = global::Esgis_Paint.Properties.Resources.Zoom_Out_32px;
-            this.btn_ZoomOut.Location = new System.Drawing.Point(21, 212);
+            this.btn_ZoomOut.Location = new System.Drawing.Point(21, 196);
             this.btn_ZoomOut.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ZoomOut.Name = "btn_ZoomOut";
             this.btn_ZoomOut.Size = new System.Drawing.Size(60, 46);
@@ -387,7 +393,7 @@
             // btn_ZoomIn
             // 
             this.btn_ZoomIn.Image = global::Esgis_Paint.Properties.Resources.Zoom_In_32px;
-            this.btn_ZoomIn.Location = new System.Drawing.Point(21, 160);
+            this.btn_ZoomIn.Location = new System.Drawing.Point(21, 143);
             this.btn_ZoomIn.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ZoomIn.Name = "btn_ZoomIn";
             this.btn_ZoomIn.Size = new System.Drawing.Size(60, 46);
@@ -397,7 +403,7 @@
             // btn_pencil
             // 
             this.btn_pencil.Image = global::Esgis_Paint.Properties.Resources.Edit_32px;
-            this.btn_pencil.Location = new System.Drawing.Point(21, 55);
+            this.btn_pencil.Location = new System.Drawing.Point(21, 33);
             this.btn_pencil.Margin = new System.Windows.Forms.Padding(4);
             this.btn_pencil.Name = "btn_pencil";
             this.btn_pencil.Size = new System.Drawing.Size(60, 46);
@@ -409,7 +415,7 @@
             // btn_eraser
             // 
             this.btn_eraser.Image = global::Esgis_Paint.Properties.Resources.Erase_32px;
-            this.btn_eraser.Location = new System.Drawing.Point(21, 107);
+            this.btn_eraser.Location = new System.Drawing.Point(21, 89);
             this.btn_eraser.Margin = new System.Windows.Forms.Padding(4);
             this.btn_eraser.Name = "btn_eraser";
             this.btn_eraser.Size = new System.Drawing.Size(60, 46);
@@ -421,38 +427,54 @@
             // groupBox_Formes
             // 
             this.groupBox_Formes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Formes.Controls.Add(this.pictureBox2);
+            this.groupBox_Formes.Controls.Add(this.pictureBox3);
             this.groupBox_Formes.Controls.Add(this.picRect);
             this.groupBox_Formes.Controls.Add(this.picEllipse);
-            this.groupBox_Formes.Controls.Add(this.pictureBox7);
-            this.groupBox_Formes.Controls.Add(this.pictureBox8);
-            this.groupBox_Formes.Controls.Add(this.pictureBox9);
-            this.groupBox_Formes.Controls.Add(this.pictureBox10);
-            this.groupBox_Formes.Controls.Add(this.pictureBox11);
             this.groupBox_Formes.Controls.Add(this.pictureBox12);
-            this.groupBox_Formes.Controls.Add(this.pictureBox6);
+            this.groupBox_Formes.Controls.Add(this.picLine);
             this.groupBox_Formes.Controls.Add(this.pictureBox5);
-            this.groupBox_Formes.Controls.Add(this.pictureBox4);
-            this.groupBox_Formes.Controls.Add(this.pictureBox3);
-            this.groupBox_Formes.Controls.Add(this.pictureBox2);
             this.groupBox_Formes.Controls.Add(this.pictureBox1);
             this.groupBox_Formes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Formes.Location = new System.Drawing.Point(37, 380);
+            this.groupBox_Formes.Location = new System.Drawing.Point(37, 517);
             this.groupBox_Formes.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Formes.Name = "groupBox_Formes";
             this.groupBox_Formes.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Formes.Size = new System.Drawing.Size(129, 390);
+            this.groupBox_Formes.Size = new System.Drawing.Size(129, 253);
             this.groupBox_Formes.TabIndex = 17;
             this.groupBox_Formes.TabStop = false;
             this.groupBox_Formes.Text = "Formes ";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox2.Image = global::Esgis_Paint.Properties.Resources.Shopping_Cart_32px;
+            this.pictureBox2.Location = new System.Drawing.Point(66, 134);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(42, 43);
+            this.pictureBox2.TabIndex = 15;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox3.Image = global::Esgis_Paint.Properties.Resources.Happy_32px;
+            this.pictureBox3.Location = new System.Drawing.Point(66, 83);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(42, 43);
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
             // 
             // picRect
             // 
             this.picRect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picRect.Image = global::Esgis_Paint.Properties.Resources.Rectangle_Stroked_32px;
-            this.picRect.Location = new System.Drawing.Point(67, 336);
+            this.picRect.Location = new System.Drawing.Point(67, 185);
             this.picRect.Margin = new System.Windows.Forms.Padding(4);
             this.picRect.Name = "picRect";
-            this.picRect.Size = new System.Drawing.Size(46, 43);
+            this.picRect.Size = new System.Drawing.Size(41, 43);
             this.picRect.TabIndex = 13;
             this.picRect.TabStop = false;
             this.picRect.Click += new System.EventHandler(this.picRect_Click);
@@ -461,7 +483,7 @@
             // 
             this.picEllipse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picEllipse.Image = global::Esgis_Paint.Properties.Resources.Circle_32px;
-            this.picEllipse.Location = new System.Drawing.Point(12, 337);
+            this.picEllipse.Location = new System.Drawing.Point(13, 185);
             this.picEllipse.Margin = new System.Windows.Forms.Padding(4);
             this.picEllipse.Name = "picEllipse";
             this.picEllipse.Size = new System.Drawing.Size(46, 43);
@@ -469,71 +491,11 @@
             this.picEllipse.TabStop = false;
             this.picEllipse.Click += new System.EventHandler(this.picEllipse_Click);
             // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Image = global::Esgis_Paint.Properties.Resources.Musical_Notes_32px;
-            this.pictureBox7.Location = new System.Drawing.Point(67, 183);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(46, 43);
-            this.pictureBox7.TabIndex = 11;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox8.Image = global::Esgis_Paint.Properties.Resources.Instagram_32px;
-            this.pictureBox8.Location = new System.Drawing.Point(12, 286);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(46, 43);
-            this.pictureBox8.TabIndex = 10;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Click += new System.EventHandler(this.pictureBox8_Click);
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox9.Image = global::Esgis_Paint.Properties.Resources.Apple_32px;
-            this.pictureBox9.Location = new System.Drawing.Point(67, 286);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(46, 43);
-            this.pictureBox9.TabIndex = 9;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox10.Image = global::Esgis_Paint.Properties.Resources.Car_32px;
-            this.pictureBox10.Location = new System.Drawing.Point(67, 234);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(46, 43);
-            this.pictureBox10.TabIndex = 8;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox11.Image = global::Esgis_Paint.Properties.Resources.Africa_32px;
-            this.pictureBox11.Location = new System.Drawing.Point(12, 235);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(46, 43);
-            this.pictureBox11.TabIndex = 7;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
-            // 
             // pictureBox12
             // 
             this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox12.Image = global::Esgis_Paint.Properties.Resources.Shopping_Cart_32px;
-            this.pictureBox12.Location = new System.Drawing.Point(12, 185);
+            this.pictureBox12.Location = new System.Drawing.Point(12, 134);
             this.pictureBox12.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(46, 43);
@@ -541,65 +503,29 @@
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Click += new System.EventHandler(this.pictureBox12_Click);
             // 
-            // pictureBox6
+            // picLine
             // 
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Image = global::Esgis_Paint.Properties.Resources.Sun_32px;
-            this.pictureBox6.Location = new System.Drawing.Point(67, 31);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(46, 43);
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.picLine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picLine.Image = global::Esgis_Paint.Properties.Resources.icons8_line_32;
+            this.picLine.Location = new System.Drawing.Point(62, 32);
+            this.picLine.Margin = new System.Windows.Forms.Padding(4);
+            this.picLine.Name = "picLine";
+            this.picLine.Size = new System.Drawing.Size(46, 43);
+            this.picLine.TabIndex = 5;
+            this.picLine.TabStop = false;
+            this.picLine.Click += new System.EventHandler(this.picLine_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox5.Image = global::Esgis_Paint.Properties.Resources.Happy_32px;
-            this.pictureBox5.Location = new System.Drawing.Point(12, 133);
+            this.pictureBox5.Location = new System.Drawing.Point(12, 83);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(46, 43);
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = global::Esgis_Paint.Properties.Resources.Hearts_32px;
-            this.pictureBox4.Location = new System.Drawing.Point(67, 133);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(46, 43);
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = global::Esgis_Paint.Properties.Resources.Cloud_32px;
-            this.pictureBox3.Location = new System.Drawing.Point(67, 81);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(46, 43);
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Esgis_Paint.Properties.Resources.Bright_Moon_32px;
-            this.pictureBox2.Location = new System.Drawing.Point(12, 82);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(46, 43);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // pictureBox1
             // 
@@ -616,6 +542,7 @@
             // groupBox_Fichier
             // 
             this.groupBox_Fichier.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Fichier.Controls.Add(this.btnReplay);
             this.groupBox_Fichier.Controls.Add(this.btn_print);
             this.groupBox_Fichier.Controls.Add(this.btn_close);
             this.groupBox_Fichier.Controls.Add(this.btn_save);
@@ -624,20 +551,35 @@
             this.groupBox_Fichier.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Fichier.Name = "groupBox_Fichier";
             this.groupBox_Fichier.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Fichier.Size = new System.Drawing.Size(137, 213);
+            this.groupBox_Fichier.Size = new System.Drawing.Size(137, 280);
             this.groupBox_Fichier.TabIndex = 18;
             this.groupBox_Fichier.TabStop = false;
             this.groupBox_Fichier.Text = "Fichier";
+            // 
+            // btnReplay
+            // 
+            this.btnReplay.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReplay.Image = global::Esgis_Paint.Properties.Resources.icons8_refresh_32;
+            this.btnReplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReplay.Location = new System.Drawing.Point(8, 212);
+            this.btnReplay.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReplay.Name = "btnReplay";
+            this.btnReplay.Size = new System.Drawing.Size(119, 50);
+            this.btnReplay.TabIndex = 7;
+            this.btnReplay.Text = "Replay";
+            this.btnReplay.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReplay.UseVisualStyleBackColor = true;
+            this.btnReplay.Click += new System.EventHandler(this.btnReplay_Click);
             // 
             // btn_print
             // 
             this.btn_print.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_print.Image = global::Esgis_Paint.Properties.Resources.Print_32px;
-            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_print.Location = new System.Drawing.Point(8, 41);
             this.btn_print.Margin = new System.Windows.Forms.Padding(4);
             this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(117, 50);
+            this.btn_print.Size = new System.Drawing.Size(119, 50);
             this.btn_print.TabIndex = 6;
             this.btn_print.Text = "Print";
             this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -648,11 +590,11 @@
             // 
             this.btn_close.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.Image = global::Esgis_Paint.Properties.Resources.Cancel_32px;
-            this.btn_close.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_close.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_close.Location = new System.Drawing.Point(8, 154);
             this.btn_close.Margin = new System.Windows.Forms.Padding(4);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(117, 50);
+            this.btn_close.Size = new System.Drawing.Size(119, 50);
             this.btn_close.TabIndex = 5;
             this.btn_close.Text = "Close";
             this.btn_close.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -663,11 +605,11 @@
             // 
             this.btn_save.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Image = global::Esgis_Paint.Properties.Resources.Save_32px;
-            this.btn_save.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_save.Location = new System.Drawing.Point(8, 96);
             this.btn_save.Margin = new System.Windows.Forms.Padding(4);
             this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(117, 50);
+            this.btn_save.Size = new System.Drawing.Size(119, 50);
             this.btn_save.TabIndex = 4;
             this.btn_save.Text = "Save";
             this.btn_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -721,7 +663,7 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label_Info);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1128, 583);
+            this.groupBox1.Location = new System.Drawing.Point(1128, 663);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -739,6 +681,7 @@
             this.pic.TabIndex = 0;
             this.pic.TabStop = false;
             this.pic.Paint += new System.Windows.Forms.PaintEventHandler(this.pic_Paint);
+            this.pic.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pic_MouseClick);
             this.pic.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pic_MouseDown);
             this.pic.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pic_MouseMove);
             this.pic.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pic_MouseUp);
@@ -755,6 +698,42 @@
             this.panel1.Size = new System.Drawing.Size(922, 717);
             this.panel1.TabIndex = 5;
             // 
+            // btnUndo
+            // 
+            this.btnUndo.Image = global::Esgis_Paint.Properties.Resources.icons8_undo_32;
+            this.btnUndo.Location = new System.Drawing.Point(16, 28);
+            this.btnUndo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(45, 45);
+            this.btnUndo.TabIndex = 21;
+            this.btnUndo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            // 
+            // btnRedo
+            // 
+            this.btnRedo.Image = global::Esgis_Paint.Properties.Resources.icons8_redo_32;
+            this.btnRedo.Location = new System.Drawing.Point(70, 28);
+            this.btnRedo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRedo.Name = "btnRedo";
+            this.btnRedo.Size = new System.Drawing.Size(45, 45);
+            this.btnRedo.TabIndex = 22;
+            this.btnRedo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRedo.UseVisualStyleBackColor = true;
+            this.btnRedo.Click += new System.EventHandler(this.btnRedo_Click);
+            // 
+            // groupBox_Toolbar
+            // 
+            this.groupBox_Toolbar.Controls.Add(this.btnUndo);
+            this.groupBox_Toolbar.Controls.Add(this.btnRedo);
+            this.groupBox_Toolbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.groupBox_Toolbar.Location = new System.Drawing.Point(12, 46);
+            this.groupBox_Toolbar.Name = "groupBox_Toolbar";
+            this.groupBox_Toolbar.Size = new System.Drawing.Size(124, 86);
+            this.groupBox_Toolbar.TabIndex = 1;
+            this.groupBox_Toolbar.TabStop = false;
+            this.groupBox_Toolbar.Text = "Toolbar";
+            // 
             // drawPic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -762,6 +741,7 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1336, 785);
+            this.Controls.Add(this.groupBox_Toolbar);
             this.Controls.Add(this.groupBox_Formes);
             this.Controls.Add(this.groupBox_Couleur);
             this.Controls.Add(this.panel1);
@@ -792,25 +772,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color4)).EndInit();
             this.groupBox_Outils.ResumeLayout(false);
             this.groupBox_Formes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEllipse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLine)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox_Fichier.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.groupBox_Toolbar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -847,18 +822,9 @@
         private System.Windows.Forms.PictureBox pictureBox_Color6;
         private System.Windows.Forms.PictureBox pictureBox_Color1;
         private System.Windows.Forms.PictureBox pictureBox_Color4;
-        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_clear;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox10;
-        private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.ToolStripMenuItem ouvrirToolStripMenuItem;
         private System.Windows.Forms.PictureBox picRect;
@@ -872,5 +838,13 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pic;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picLine;
+        private System.Windows.Forms.Button btnFill;
+        private System.Windows.Forms.Button btnUndo;
+        private System.Windows.Forms.Button btnRedo;
+        private System.Windows.Forms.Button btnReplay;
+        private System.Windows.Forms.GroupBox groupBox_Toolbar;
     }
 }

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,6 +21,7 @@ namespace Esgis_Paint
         List<Point> allPoints = new List<Point>();
         public Point current = new Point();
         public Point old = new Point();
+        Bitmap bm;
         public Graphics g;
         public Pen pen;
         public Pen eraser;
@@ -36,11 +38,15 @@ namespace Esgis_Paint
         private DrawingState state;
         private bool drawing;
         #endregion
-        
+
+        // Save bitmaps 
+        private readonly Stack<Bitmap> undoStack = new Stack<Bitmap>();
+        private readonly Stack<Bitmap> redoStack = new Stack<Bitmap>();
+
         public drawPic()
         {
             InitializeComponent();
-            Bitmap bm = new Bitmap(pic.Width, pic.Height);
+            bm = new Bitmap(pic.Width, pic.Height);
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
             pic.Image = bm;
@@ -77,7 +83,7 @@ namespace Esgis_Paint
             // Changing the location of Left Control boxes
             groupBox_Outils.Location = new Point(groupBox_Outils.Location.X + 10, groupBox_Outils.Location.Y);
             groupBox_Formes.Location = new Point(groupBox_Formes.Location.X + 2, groupBox_Formes.Location.Y);
-
+            groupBox_Toolbar.Location = new Point(groupBox_Toolbar.Location.X + 2, groupBox_Toolbar.Location.Y);
             // Changing the location of Right Control boxes
             int rightControlBoxes_X = groupBox_Outils.Width + pic.Width + 70;            
            
@@ -88,6 +94,40 @@ namespace Esgis_Paint
             groupBox1.Enabled = false;
             groupBox1.Visible = false;
         }
+        #region GROUPBOX: TOOLBAR
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            if (undoStack.Count > 0)
+            {
+                redoStack.Push((Bitmap)bm.Clone());
+                bm = undoStack.Pop();
+                g = Graphics.FromImage(bm);
+                pic.Image = bm;
+                pic.Invalidate();
+            }
+            else
+            {
+                MessageBox.Show("Nothing to Undo");
+            }
+        }
+
+        private void btnRedo_Click(object sender, EventArgs e)
+        {
+            if (redoStack.Count > 0)
+            {
+                undoStack.Push((Bitmap)bm.Clone());
+                bm = redoStack.Pop();
+                g = Graphics.FromImage(bm);
+                pic.Image = bm;
+                pic.Invalidate();
+            }
+            else
+            {
+                MessageBox.Show("Nothing to Redo");
+            }
+        }
+        #endregion        
 
         #region GROUPBOX : Outils
 
@@ -107,8 +147,14 @@ namespace Esgis_Paint
         {
             allPoints = new List<Point>();
             allSpecialForms = new List<SpecialForm>();
+            undoStack.Clear();
+            redoStack.Clear();
             g.Clear(Color.White);
             pic.Invalidate();
+        }
+        private void btnFill_Click(object sender, EventArgs e)
+        {
+            state = DrawingState.Fill;
         }
 
         #endregion
@@ -121,9 +167,10 @@ namespace Esgis_Paint
             RefreshSpecialForm_With(pictureBox1.Image);
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
+        private void picLine_Click(object sender, EventArgs e)
         {
-            RefreshSpecialForm_With(pictureBox6.Image);
+            state = DrawingState.Line;
+            numericUpDown_Epaisseur.Value = (decimal)pen.Width;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -141,39 +188,9 @@ namespace Esgis_Paint
             RefreshSpecialForm_With(pictureBox5.Image);
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            RefreshSpecialForm_With(pictureBox4.Image);
-        }
-
         private void pictureBox12_Click(object sender, EventArgs e)
         {
             RefreshSpecialForm_With(pictureBox12.Image);
-        }
-
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            RefreshSpecialForm_With(pictureBox7.Image);
-        }
-
-        private void pictureBox11_Click(object sender, EventArgs e)
-        {
-            RefreshSpecialForm_With(pictureBox11.Image);
-        }
-
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-            RefreshSpecialForm_With(pictureBox10.Image);
-        }
-
-        private void pictureBox8_Click(object sender, EventArgs e)
-        {
-            RefreshSpecialForm_With(pictureBox8.Image);
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-            RefreshSpecialForm_With(pictureBox9.Image);
         }
 
         private void picEllipse_Click(object sender, EventArgs e)
@@ -296,6 +313,30 @@ namespace Esgis_Paint
             }
         }
 
+        private void btnReplay_Click(object sender, EventArgs e)
+        {
+            int count = undoStack.Count;
+            while (undoStack.Count > 0)
+            {
+                redoStack.Push((Bitmap)bm.Clone());
+                bm = undoStack.Pop();
+            }
+            g = Graphics.FromImage(bm);
+            pic.Image = bm;
+            pic.Invalidate();
+
+            for (int i = 0; i < count; ++i)
+            {
+                Application.DoEvents();
+                Thread.Sleep(1000);
+                undoStack.Push((Bitmap)bm.Clone());
+                bm = redoStack.Pop(); ;
+                g = Graphics.FromImage(bm);
+                pic.Image = bm;
+                pic.Invalidate();
+            }
+            MessageBox.Show("Done");
+        }
         #endregion
 
         #region PIC
@@ -308,6 +349,10 @@ namespace Esgis_Paint
         {
             old = e.Location;
             drawing = true;
+
+            undoStack.Push((Bitmap)bm.Clone());
+            redoStack.Clear();
+
             if (state == DrawingState.SpecialForm)
             {
                 g.DrawImage(Specialform_IMG, e.Location);
@@ -329,7 +374,7 @@ namespace Esgis_Paint
                 }
                 else if (state == DrawingState.Line)
                 {
-                    // Haven't done anything yet
+                    g.DrawLine(pen, old, current);
                 }
                 drawing = false;
             }            
@@ -398,11 +443,20 @@ namespace Esgis_Paint
                 }
                 else if (state == DrawingState.Line)
                 {
-                    // Haven't done anything yet
+                    g.DrawLine(pen, old, current);
                 }
             }
         }
 
+        private void pic_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (state == DrawingState.Fill)
+            {
+                Point p = SetPoint(pic, e.Location);
+                Fill(bm, p.X, p.Y, pictureBox_ColorActual.BackColor);
+                pic.Refresh();
+            }
+        }
         #endregion
 
         #region MENU
@@ -622,6 +676,7 @@ namespace Esgis_Paint
                 log.WriteToLogFile("print", "Temp. unsaved Sketch");
             }
         }
+
         /// <summary>
         /// Change mouse icon to cross
         /// </summary>
@@ -650,6 +705,70 @@ namespace Esgis_Paint
             shape.Height = Math.Abs(old.Y - current.Y);
             return shape;
         }
+
+        /// <summary>
+        /// Set the point
+        /// </summary>
+        /// <param name="pb"></param>
+        /// <param name="pt"></param>
+        /// <returns></returns>
+        private Point SetPoint(PictureBox pb, Point pt)
+        {
+            float pX = 1f * pb.Image.Width / pb.Width;
+            float pY = 1f * pb.Image.Height / pb.Height;
+            return new Point((int)(pt.X * pX), (int)(pt.Y * pY));
+        }
+
+        /// <summary>
+        /// Check position that is can change color
+        /// </summary>
+        /// <param name="bm"></param>
+        /// <param name="sp"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="oldColor"></param>
+        /// <param name="newColor"></param>
+        private void validate(Bitmap bm, Stack<Point> sp, int x, int y, Color oldColor, Color newColor)
+        {
+            Color cx = bm.GetPixel(x, y);
+            if (cx == oldColor)
+            {
+                Point p = new Point(x, y);
+                sp.Push(p);
+                bm.SetPixel(x, y, newColor);
+            }
+        }
+        /// <summary>
+        /// Fill color with the where location is
+        /// </summary>
+        /// <param name="bm"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="newColor"></param>
+        private void Fill(Bitmap bm, int x, int y, Color newColor)
+        {
+            Color oldColor = bm.GetPixel(x, y);
+            Stack<Point> pixel = new Stack<Point>();
+            pixel.Push(new Point(x, y));
+            bm.SetPixel(x, y, newColor);
+
+            if (oldColor == newColor)
+                return;
+
+            while (pixel.Count > 0)
+            {
+                Point pt = (Point)pixel.Pop();
+                if (pt.X > 0 && pt.Y > 0
+                    && pt.X < bm.Width - 1 && pt.Y < bm.Height - 1)
+                {
+                    validate(bm, pixel, pt.X - 1, pt.Y, oldColor, newColor);
+                    validate(bm, pixel, pt.X + 1, pt.Y, oldColor, newColor);
+                    validate(bm, pixel, pt.X, pt.Y - 1, oldColor, newColor);
+                    validate(bm, pixel, pt.X, pt.Y + 1, oldColor, newColor);
+                }
+            }
+        }
+
         #endregion
 
         #region MENU
@@ -688,6 +807,6 @@ namespace Esgis_Paint
             bitm.Dispose();
         }
 
-        #endregion
-    }    
+        #endregion        
+    }
 }
