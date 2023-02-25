@@ -58,7 +58,7 @@
             this.btn_pencil = new System.Windows.Forms.Button();
             this.btn_eraser = new System.Windows.Forms.Button();
             this.groupBox_Formes = new System.Windows.Forms.GroupBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.picTriangle = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.picRect = new System.Windows.Forms.PictureBox();
             this.picEllipse = new System.Windows.Forms.PictureBox();
@@ -95,7 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color4)).BeginInit();
             this.groupBox_Outils.SuspendLayout();
             this.groupBox_Formes.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTriangle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRect)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEllipse)).BeginInit();
@@ -429,7 +429,7 @@
             // groupBox_Formes
             // 
             this.groupBox_Formes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox_Formes.Controls.Add(this.pictureBox2);
+            this.groupBox_Formes.Controls.Add(this.picTriangle);
             this.groupBox_Formes.Controls.Add(this.pictureBox3);
             this.groupBox_Formes.Controls.Add(this.picRect);
             this.groupBox_Formes.Controls.Add(this.picEllipse);
@@ -447,36 +447,38 @@
             this.groupBox_Formes.TabStop = false;
             this.groupBox_Formes.Text = "Formes ";
             // 
-            // pictureBox2
+            // picTriangle
             // 
-            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox2.Image = global::Esgis_Paint.Properties.Resources.Shopping_Cart_32px;
-            this.pictureBox2.Location = new System.Drawing.Point(66, 134);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(42, 43);
-            this.pictureBox2.TabIndex = 15;
-            this.pictureBox2.TabStop = false;
+            this.picTriangle.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picTriangle.Image = global::Esgis_Paint.Properties.Resources.Triangle_32px;
+            this.picTriangle.Location = new System.Drawing.Point(62, 134);
+            this.picTriangle.Margin = new System.Windows.Forms.Padding(4);
+            this.picTriangle.Name = "picTriangle";
+            this.picTriangle.Size = new System.Drawing.Size(46, 43);
+            this.picTriangle.TabIndex = 15;
+            this.picTriangle.TabStop = false;
+            this.picTriangle.Click += new System.EventHandler(this.picTriangle_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox3.Image = global::Esgis_Paint.Properties.Resources.Happy_32px;
-            this.pictureBox3.Location = new System.Drawing.Point(66, 83);
+            this.pictureBox3.Image = global::Esgis_Paint.Properties.Resources.LOL_32px;
+            this.pictureBox3.Location = new System.Drawing.Point(62, 83);
             this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(42, 43);
+            this.pictureBox3.Size = new System.Drawing.Size(46, 43);
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // picRect
             // 
             this.picRect.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picRect.Image = global::Esgis_Paint.Properties.Resources.Rectangle_Stroked_32px;
-            this.picRect.Location = new System.Drawing.Point(67, 185);
+            this.picRect.Location = new System.Drawing.Point(62, 185);
             this.picRect.Margin = new System.Windows.Forms.Padding(4);
             this.picRect.Name = "picRect";
-            this.picRect.Size = new System.Drawing.Size(41, 43);
+            this.picRect.Size = new System.Drawing.Size(46, 43);
             this.picRect.TabIndex = 13;
             this.picRect.TabStop = false;
             this.picRect.Click += new System.EventHandler(this.picRect_Click);
@@ -732,7 +734,7 @@
             this.groupBox_Toolbar.Controls.Add(this.btnUndo);
             this.groupBox_Toolbar.Controls.Add(this.btnRedo);
             this.groupBox_Toolbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox_Toolbar.Location = new System.Drawing.Point(12, 46);
+            this.groupBox_Toolbar.Location = new System.Drawing.Point(5, 46);
             this.groupBox_Toolbar.Name = "groupBox_Toolbar";
             this.groupBox_Toolbar.Size = new System.Drawing.Size(124, 86);
             this.groupBox_Toolbar.TabIndex = 1;
@@ -777,7 +779,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Color4)).EndInit();
             this.groupBox_Outils.ResumeLayout(false);
             this.groupBox_Formes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picTriangle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRect)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picEllipse)).EndInit();
@@ -844,7 +846,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pic;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox picTriangle;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox picLine;
         private System.Windows.Forms.Button btnFill;

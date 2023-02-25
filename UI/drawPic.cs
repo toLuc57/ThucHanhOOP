@@ -27,6 +27,7 @@ namespace Esgis_Paint
         public Graphics g;
         public Pen pen;
         public Pen eraser;
+        bool change = false;
 
         //Parameters that user can change
         Color pen_color;
@@ -39,11 +40,12 @@ namespace Esgis_Paint
         //Useful to control pen state
         private DrawingState state;
         private bool drawing;
-        #endregion
 
         // Save bitmaps 
         private readonly Stack<Bitmap> undoStack = new Stack<Bitmap>();
         private readonly Stack<Bitmap> redoStack = new Stack<Bitmap>();
+
+        #endregion
 
         public drawPic()
         {
@@ -58,6 +60,7 @@ namespace Esgis_Paint
             //Initialisations
             state = DrawingState.Pen;
             drawing = false;
+            change = false;
 
             log = new Journal();
             eraser_width = 6;
@@ -96,6 +99,7 @@ namespace Esgis_Paint
             groupBox1.Enabled = false;
             groupBox1.Visible = false;
         }
+
         #region GROUPBOX: TOOLBAR
 
         private void btnUndo_Click(object sender, EventArgs e)
@@ -189,7 +193,7 @@ namespace Esgis_Paint
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            RefreshSpecialForm_With(pictureBox2.Image);
+            RefreshSpecialForm_With(picTriangle.Image);
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
@@ -216,6 +220,12 @@ namespace Esgis_Paint
         private void picRect_Click(object sender, EventArgs e)
         {
             state = DrawingState.Rect;
+            numericUpDown_Epaisseur.Value = (decimal)pen.Width;
+        }
+
+        private void picTriangle_Click(object sender, EventArgs e)
+        {
+            state = DrawingState.Triangle;
             numericUpDown_Epaisseur.Value = (decimal)pen.Width;
         }
         #endregion
@@ -292,7 +302,7 @@ namespace Esgis_Paint
         #region GROUPBOX : Fichier
 
         private void btn_print_Click(object sender, EventArgs e)
-        {
+        {            
             PrintSketch();
         }
 
@@ -309,8 +319,8 @@ namespace Esgis_Paint
         private void btn_close_Click(object sender, EventArgs e)
         {
             //TODO: Put the code inside a method and call it here
-            if (((allPoints.Count == 0) & (allSpecialForms.Count == 0)) || (drawing = false))
-            {
+            if (!change)
+            {                
                 log.WriteToLogFile("disconnect");
                 Dispose();
             }
@@ -361,17 +371,24 @@ namespace Esgis_Paint
 
         private void pic_MouseDown(object sender, MouseEventArgs e)
         {
-            old = e.Location;
-            drawing = true;
-
-            undoStack.Push((Bitmap)bm.Clone());
-            redoStack.Clear();
-
             if (state == DrawingState.SpecialForm)
             {
                 g.DrawImage(Specialform_IMG, e.Location);
-                Specialform = new SpecialForm(Specialform_IMG, e.Location);                
-            }            
+
+                //Add the draw point to the list of SpecialForm
+                Specialform = new SpecialForm(Specialform_IMG, e.Location);
+                allSpecialForms.Add(Specialform);
+
+                pic.Refresh();
+            }
+
+            old = e.Location;
+            drawing = true;
+            change = true;
+
+            undoStack.Push((Bitmap)bm.Clone());
+            redoStack.Clear();
+            
         }
 
         private void pic_MouseUp(object sender, MouseEventArgs e)
@@ -389,6 +406,18 @@ namespace Esgis_Paint
                 else if (state == DrawingState.Line)
                 {
                     g.DrawLine(pen, old, current);
+                }
+                else if (state == DrawingState.Triangle)
+                {
+                    Rectangle shape = GetRect();
+                    Point pointA = new Point(shape.X + shape.Width / 2, shape.Y);
+                    Point pointB = new Point(shape.X, shape.Y + shape.Width);
+                    Point pointC = new Point(shape.X + shape.Width, shape.Y + shape.Width);
+
+                    // Draw triange
+                    g.DrawLine(pen, pointA, pointB);
+                    g.DrawLine(pen, pointC, pointB);
+                    g.DrawLine(pen, pointA, pointC);
                 }
                 drawing = false;
             }            
@@ -425,18 +454,6 @@ namespace Esgis_Paint
                     }
                 }
 
-                // SpecialForm enable
-                else if (state == DrawingState.SpecialForm)
-                {
-                    if (e.Button == MouseButtons.Left)
-                    {
-                        g.DrawImage(Specialform_IMG, current);
-
-                        //Add the draw point to the list of SpecialForm
-                        Specialform = new SpecialForm(Specialform_IMG, e.Location);
-                        allSpecialForms.Add(Specialform);
-                    }
-                }
                 pic.Refresh();
             }
             RefreshInformations();
@@ -458,6 +475,18 @@ namespace Esgis_Paint
                 else if (state == DrawingState.Line)
                 {
                     g.DrawLine(pen, old, current);
+                }
+                else if (state == DrawingState.Triangle)
+                {
+                    Rectangle shape = GetRect();
+                    Point pointA = new Point(shape.X + shape.Width / 2, shape.Y);
+                    Point pointB = new Point(shape.X, shape.Y + shape.Width);
+                    Point pointC = new Point(shape.X + shape.Width, shape.Y + shape.Width);
+
+                    // Draw triange
+                    g.DrawLine(pen, pointA, pointB);
+                    g.DrawLine(pen, pointC, pointB);
+                    g.DrawLine(pen, pointA, pointC);
                 }
             }
         }
@@ -585,27 +614,17 @@ namespace Esgis_Paint
         private void SaveSketch()
         {
             SaveFileDialog saveDialog = new SaveFileDialog();
-            Bitmap bitm = new Bitmap(pic.Width, pic.Height);
-            Graphics bitGraphics = Graphics.FromImage(bitm);
 
             saveDialog.Filter = "Image (*.PNG)|*.PNG";
 
             try
             {
-                //Draw all point to Graphics
-                bitGraphics.DrawLines(pen, allPoints.ToArray());
-
-                //Drawing Images to Graphics
-                foreach (var item in allSpecialForms)
-                {
-                    bitGraphics.DrawImage(item._Image, item._Point);
-                }
-
                 //Here we let the user enter the name for the file
                 if (saveDialog.ShowDialog() == DialogResult.OK)
                 {
-                    bitm.Save(saveDialog.FileName);
+                    bm.Save(saveDialog.FileName);
                     log.WriteToLogFile("pic_save", saveDialog.FileName);
+                    change = false;
                 }
             }
             catch (Exception e)
@@ -824,6 +843,6 @@ namespace Esgis_Paint
             bitm.Dispose();
         }
 
-        #endregion        
+        #endregion
     }
 }
