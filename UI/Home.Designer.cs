@@ -95,7 +95,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(131, 249);
+            this.label3.Location = new System.Drawing.Point(186, 249);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(356, 25);
@@ -129,28 +129,28 @@
             // 
             this.nouveauDessinToolStripMenuItem.Name = "nouveauDessinToolStripMenuItem";
             this.nouveauDessinToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.nouveauDessinToolStripMenuItem.Text = "Nouveau dessin";
+            this.nouveauDessinToolStripMenuItem.Text = "Trang vẽ mới";
             this.nouveauDessinToolStripMenuItem.Click += new System.EventHandler(this.nouveauDessinToolStripMenuItem_Click);
             // 
             // ouvrirUneImageToolStripMenuItem
             // 
             this.ouvrirUneImageToolStripMenuItem.Name = "ouvrirUneImageToolStripMenuItem";
             this.ouvrirUneImageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.ouvrirUneImageToolStripMenuItem.Text = "Ouvrir une image";
+            this.ouvrirUneImageToolStripMenuItem.Text = "Mở hình ảnh";
             this.ouvrirUneImageToolStripMenuItem.Click += new System.EventHandler(this.ouvrirUneImageToolStripMenuItem_Click);
             // 
             // journalToolStripMenuItem
             // 
             this.journalToolStripMenuItem.Name = "journalToolStripMenuItem";
             this.journalToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.journalToolStripMenuItem.Text = "Journal";
+            this.journalToolStripMenuItem.Text = "Nhật ký";
             this.journalToolStripMenuItem.Click += new System.EventHandler(this.journalToolStripMenuItem_Click);
             // 
             // fermerToolStripMenuItem
             // 
             this.fermerToolStripMenuItem.Name = "fermerToolStripMenuItem";
             this.fermerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.fermerToolStripMenuItem.Text = "Fermer";
+            this.fermerToolStripMenuItem.Text = "Đóng";
             this.fermerToolStripMenuItem.Click += new System.EventHandler(this.fermerToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1

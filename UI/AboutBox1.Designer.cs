@@ -89,7 +89,7 @@
             this.labelProductName.Name = "labelProductName";
             this.labelProductName.Size = new System.Drawing.Size(361, 21);
             this.labelProductName.TabIndex = 19;
-            this.labelProductName.Text = "Nom du produit";
+            this.labelProductName.Text = "Tên sản phẩm";
             this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelVersion
@@ -115,7 +115,7 @@
             this.labelCopyright.Name = "labelCopyright";
             this.labelCopyright.Size = new System.Drawing.Size(361, 21);
             this.labelCopyright.TabIndex = 21;
-            this.labelCopyright.Text = "Copyright : ";
+            this.labelCopyright.Text = "Phiên bản : ";
             this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelCompanyName
@@ -128,7 +128,7 @@
             this.labelCompanyName.Name = "labelCompanyName";
             this.labelCompanyName.Size = new System.Drawing.Size(361, 21);
             this.labelCompanyName.TabIndex = 22;
-            this.labelCompanyName.Text = "Nom de la société";
+            this.labelCompanyName.Text = "Tên công ty";
             this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // textBoxDescription

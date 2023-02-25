@@ -136,7 +136,6 @@
             this.dessinToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(1336, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
@@ -149,36 +148,36 @@
             this.imprimerToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
-            this.fichierToolStripMenuItem.Text = "Fichier";
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.fichierToolStripMenuItem.Text = "Tệp";
             this.fichierToolStripMenuItem.Click += new System.EventHandler(this.fichierToolStripMenuItem_Click);
             // 
             // ouvrirToolStripMenuItem
             // 
             this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.ouvrirToolStripMenuItem.Text = "Ouvrir image";
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.ouvrirToolStripMenuItem.Text = "Mở hình ảnh";
             this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
             // 
             // enregistrerToolStripMenuItem
             // 
             this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
-            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.enregistrerToolStripMenuItem.Text = "Enregistrer ";
+            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.enregistrerToolStripMenuItem.Text = "Lưu";
             this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
             // 
             // imprimerToolStripMenuItem
             // 
             this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
-            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.imprimerToolStripMenuItem.Text = "Imprimer";
+            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.imprimerToolStripMenuItem.Text = "In";
             this.imprimerToolStripMenuItem.Click += new System.EventHandler(this.imprimerToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(170, 26);
-            this.quitterToolStripMenuItem.Text = "Quitter";
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.quitterToolStripMenuItem.Text = "Thoát";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
             // dessinToolStripMenuItem
@@ -186,15 +185,15 @@
             this.dessinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.effacerToutToolStripMenuItem});
             this.dessinToolStripMenuItem.Name = "dessinToolStripMenuItem";
-            this.dessinToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
-            this.dessinToolStripMenuItem.Text = "Dessin";
+            this.dessinToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.dessinToolStripMenuItem.Text = "Thiết kế";
             this.dessinToolStripMenuItem.Click += new System.EventHandler(this.dessinToolStripMenuItem_Click);
             // 
             // effacerToutToolStripMenuItem
             // 
             this.effacerToutToolStripMenuItem.Name = "effacerToutToolStripMenuItem";
-            this.effacerToutToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
-            this.effacerToutToolStripMenuItem.Text = "Effacer tout";
+            this.effacerToutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.effacerToutToolStripMenuItem.Text = "Đặt lại tất cả";
             this.effacerToutToolStripMenuItem.Click += new System.EventHandler(this.effacerToutToolStripMenuItem_Click);
             // 
             // numericUpDown_Epaisseur
@@ -220,7 +219,7 @@
             this.groupBox_Epaisseur.Size = new System.Drawing.Size(137, 86);
             this.groupBox_Epaisseur.TabIndex = 15;
             this.groupBox_Epaisseur.TabStop = false;
-            this.groupBox_Epaisseur.Text = "Epaisseur";
+            this.groupBox_Epaisseur.Text = "Độ dày";
             // 
             // groupBox_Couleur
             // 
@@ -242,7 +241,7 @@
             this.groupBox_Couleur.Size = new System.Drawing.Size(137, 209);
             this.groupBox_Couleur.TabIndex = 16;
             this.groupBox_Couleur.TabStop = false;
-            this.groupBox_Couleur.Text = "Couleurs";
+            this.groupBox_Couleur.Text = "Màu";
             // 
             // pictureBox_ColorActual
             // 
@@ -336,7 +335,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(117, 50);
             this.button3.TabIndex = 0;
-            this.button3.Text = "Plus";
+            this.button3.Text = "Thêm";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -357,7 +356,7 @@
             this.groupBox_Outils.Size = new System.Drawing.Size(108, 331);
             this.groupBox_Outils.TabIndex = 17;
             this.groupBox_Outils.TabStop = false;
-            this.groupBox_Outils.Text = "Outils";
+            this.groupBox_Outils.Text = "Công cụ";
             // 
             // btn_clear
             // 
@@ -443,7 +442,7 @@
             this.groupBox_Formes.Size = new System.Drawing.Size(129, 390);
             this.groupBox_Formes.TabIndex = 17;
             this.groupBox_Formes.TabStop = false;
-            this.groupBox_Formes.Text = "Formes ";
+            this.groupBox_Formes.Text = "Hình dạng";
             // 
             // picRect
             // 
@@ -627,7 +626,7 @@
             this.groupBox_Fichier.Size = new System.Drawing.Size(137, 213);
             this.groupBox_Fichier.TabIndex = 18;
             this.groupBox_Fichier.TabStop = false;
-            this.groupBox_Fichier.Text = "Fichier";
+            this.groupBox_Fichier.Text = "Tệp";
             // 
             // btn_print
             // 
@@ -639,7 +638,7 @@
             this.btn_print.Name = "btn_print";
             this.btn_print.Size = new System.Drawing.Size(117, 50);
             this.btn_print.TabIndex = 6;
-            this.btn_print.Text = "Print";
+            this.btn_print.Text = "In";
             this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_print.UseVisualStyleBackColor = true;
             this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
@@ -654,7 +653,7 @@
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(117, 50);
             this.btn_close.TabIndex = 5;
-            this.btn_close.Text = "Close";
+            this.btn_close.Text = "Đóng";
             this.btn_close.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
@@ -669,7 +668,7 @@
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(117, 50);
             this.btn_save.TabIndex = 4;
-            this.btn_save.Text = "Save";
+            this.btn_save.Text = "Lưu";
             this.btn_save.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
