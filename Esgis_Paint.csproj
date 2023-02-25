@@ -142,6 +142,8 @@
     <None Include="Resources\icons8-redo-32.png" />
     <None Include="Resources\icons8-undo-32.png" />
     <None Include="Resources\icons8-refresh-32.png" />
+    <None Include="Resources\icons8-rotate-left-32.png" />
+    <None Include="Resources\icons8-rotate-right-32.png" />
     <Content Include="screenshots\screenshot_1.jpg" />
     <None Include="README.md" />
     <None Include="Resources\Africa_32px.png" />

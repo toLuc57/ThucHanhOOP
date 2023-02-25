@@ -53,8 +53,8 @@
             this.groupBox_Outils = new System.Windows.Forms.GroupBox();
             this.btnFill = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_ZoomOut = new System.Windows.Forms.Button();
-            this.btn_ZoomIn = new System.Windows.Forms.Button();
+            this.btn_RotateRight = new System.Windows.Forms.Button();
+            this.btn_RotateLeft = new System.Windows.Forms.Button();
             this.btn_pencil = new System.Windows.Forms.Button();
             this.btn_eraser = new System.Windows.Forms.Button();
             this.groupBox_Formes = new System.Windows.Forms.GroupBox();
@@ -340,8 +340,8 @@
             this.groupBox_Outils.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox_Outils.Controls.Add(this.btnFill);
             this.groupBox_Outils.Controls.Add(this.btn_clear);
-            this.groupBox_Outils.Controls.Add(this.btn_ZoomOut);
-            this.groupBox_Outils.Controls.Add(this.btn_ZoomIn);
+            this.groupBox_Outils.Controls.Add(this.btn_RotateRight);
+            this.groupBox_Outils.Controls.Add(this.btn_RotateLeft);
             this.groupBox_Outils.Controls.Add(this.btn_pencil);
             this.groupBox_Outils.Controls.Add(this.btn_eraser);
             this.groupBox_Outils.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -380,25 +380,27 @@
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
-            // btn_ZoomOut
+            // btn_RotateRight
             // 
-            this.btn_ZoomOut.Image = global::Esgis_Paint.Properties.Resources.Zoom_Out_32px;
-            this.btn_ZoomOut.Location = new System.Drawing.Point(21, 196);
-            this.btn_ZoomOut.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_ZoomOut.Name = "btn_ZoomOut";
-            this.btn_ZoomOut.Size = new System.Drawing.Size(60, 46);
-            this.btn_ZoomOut.TabIndex = 18;
-            this.btn_ZoomOut.UseVisualStyleBackColor = true;
+            this.btn_RotateRight.Image = global::Esgis_Paint.Properties.Resources.icons8_rotate_right_32;
+            this.btn_RotateRight.Location = new System.Drawing.Point(21, 196);
+            this.btn_RotateRight.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_RotateRight.Name = "btn_RotateRight";
+            this.btn_RotateRight.Size = new System.Drawing.Size(60, 46);
+            this.btn_RotateRight.TabIndex = 18;
+            this.btn_RotateRight.UseVisualStyleBackColor = true;
+            this.btn_RotateRight.Click += new System.EventHandler(this.btn_RotateRight_Click);
             // 
-            // btn_ZoomIn
+            // btn_RotateLeft
             // 
-            this.btn_ZoomIn.Image = global::Esgis_Paint.Properties.Resources.Zoom_In_32px;
-            this.btn_ZoomIn.Location = new System.Drawing.Point(21, 143);
-            this.btn_ZoomIn.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_ZoomIn.Name = "btn_ZoomIn";
-            this.btn_ZoomIn.Size = new System.Drawing.Size(60, 46);
-            this.btn_ZoomIn.TabIndex = 17;
-            this.btn_ZoomIn.UseVisualStyleBackColor = true;
+            this.btn_RotateLeft.Image = global::Esgis_Paint.Properties.Resources.icons8_rotate_left_32;
+            this.btn_RotateLeft.Location = new System.Drawing.Point(21, 143);
+            this.btn_RotateLeft.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_RotateLeft.Name = "btn_RotateLeft";
+            this.btn_RotateLeft.Size = new System.Drawing.Size(60, 46);
+            this.btn_RotateLeft.TabIndex = 17;
+            this.btn_RotateLeft.UseVisualStyleBackColor = true;
+            this.btn_RotateLeft.Click += new System.EventHandler(this.btn_RotateLeft_Click);
             // 
             // btn_pencil
             // 
@@ -674,10 +676,12 @@
             // 
             // pic
             // 
+            this.pic.BackColor = System.Drawing.Color.White;
             this.pic.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.pic.Location = new System.Drawing.Point(-1, -1);
+            this.pic.Location = new System.Drawing.Point(3, 3);
             this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(922, 717);
+            this.pic.Size = new System.Drawing.Size(914, 709);
+            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pic.TabIndex = 0;
             this.pic.TabStop = false;
             this.pic.Paint += new System.Windows.Forms.PaintEventHandler(this.pic_Paint);
@@ -689,7 +693,8 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pic);
             this.panel1.Location = new System.Drawing.Point(175, 53);
@@ -785,6 +790,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.groupBox_Toolbar.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -809,8 +815,8 @@
         private System.Windows.Forms.GroupBox groupBox_Epaisseur;
         private System.Windows.Forms.GroupBox groupBox_Couleur;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btn_ZoomIn;
-        private System.Windows.Forms.Button btn_ZoomOut;
+        private System.Windows.Forms.Button btn_RotateLeft;
+        private System.Windows.Forms.Button btn_RotateRight;
         private System.Windows.Forms.GroupBox groupBox_Outils;
         private System.Windows.Forms.GroupBox groupBox_Formes;
         private System.Windows.Forms.GroupBox groupBox_Fichier;

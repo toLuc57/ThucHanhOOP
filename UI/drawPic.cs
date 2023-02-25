@@ -16,7 +16,9 @@ namespace Esgis_Paint
     public partial class drawPic : Form
     {
         #region Variables
-
+        
+        FileStream picture_stream;
+        FileInfo img;
         Journal log;
         List<Point> allPoints = new List<Point>();
         public Point current = new Point();
@@ -46,6 +48,8 @@ namespace Esgis_Paint
         public drawPic()
         {
             InitializeComponent();
+            pic.Width = panel1.Width - 10;
+            pic.Height = panel1.Height - 10;
             bm = new Bitmap(pic.Width, pic.Height);
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
@@ -86,11 +90,9 @@ namespace Esgis_Paint
             groupBox_Toolbar.Location = new Point(groupBox_Toolbar.Location.X + 2, groupBox_Toolbar.Location.Y);
             // Changing the location of Right Control boxes
             int rightControlBoxes_X = groupBox_Outils.Width + pic.Width + 70;            
-           
-            this.Width = this.Width - 50;
 
-            btn_ZoomIn.Enabled = false;
-            btn_ZoomOut.Enabled = false;
+            this.Width = this.Width - 50;
+            
             groupBox1.Enabled = false;
             groupBox1.Visible = false;
         }
@@ -155,6 +157,18 @@ namespace Esgis_Paint
         private void btnFill_Click(object sender, EventArgs e)
         {
             state = DrawingState.Fill;
+        }
+
+        private void btn_RotateLeft_Click(object sender, EventArgs e)
+        {            
+            bm.RotateFlip(RotateFlipType.Rotate270FlipNone);
+            pic.Image = bm;
+        }
+
+        private void btn_RotateRight_Click(object sender, EventArgs e)
+        {
+            bm.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            pic.Image = bm;
         }
 
         #endregion
@@ -626,11 +640,14 @@ namespace Esgis_Paint
             if (OpenFile_dialog.ShowDialog() == DialogResult.OK)
             {
                 FileInfo choice_info = new FileInfo(OpenFile_dialog.FileName);
-
-                //Calling modifyPic and sending to it the picture info
-                editPic modifPage = new editPic();
-                modifPage.getImage(choice_info);
-                modifPage.Show();
+                                
+                img = choice_info;
+                picture_stream = img.OpenRead();
+                Image pictureObj = Image.FromStream(picture_stream);
+                bm = new Bitmap(pictureObj, pic.Width, pic.Height);
+                g = Graphics.FromImage(bm);
+                pic.Image = bm;
+                this.Text = img.FullName;
             }
         }
 
