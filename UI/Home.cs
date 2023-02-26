@@ -141,7 +141,7 @@ namespace Esgis_Paint
         /// </summary>
         private void DisconnectApp()
         {
-            DialogResult exitresult = MessageBox.Show("Etes-vous sur de vouloir fermer ESGIS PAINT ?", "Quitter ? ", MessageBoxButtons.YesNo);
+            DialogResult exitresult = MessageBox.Show("Bạn có thật sự muốn thoát ?", "Thoát ? ", MessageBoxButtons.YesNo);
 
             if (exitresult == DialogResult.Yes)
             {

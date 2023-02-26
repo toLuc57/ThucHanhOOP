@@ -285,7 +285,7 @@ namespace Esgis_Paint
             }
             else
             {
-                DialogResult exitresult = MessageBox.Show("Un dessin est en cours ! Voulez-vous l'enregistrer ?", "Enregistrer ? ", MessageBoxButtons.YesNo);
+                DialogResult exitresult = MessageBox.Show("Một bản vẽ đang được tiến hành! Bạn có muốn lưu nó không?", "Lưu? ", MessageBoxButtons.YesNo);
 
                 if (exitresult == DialogResult.Yes) //Saving the skecth is user is ok
                 {
@@ -542,7 +542,7 @@ namespace Esgis_Paint
             }
             catch (Exception e)
             {
-                MessageBox.Show("Impossible d'enregistrer un dessin vide");
+                MessageBox.Show("Không thể lưu bản vẽ trống!!");
             }
             
         }
@@ -562,7 +562,7 @@ namespace Esgis_Paint
         private void OpenPicture()
         {
             OpenFileDialog OpenFile_dialog = new OpenFileDialog();
-            OpenFile_dialog.Title = "Choose a picture";
+            OpenFile_dialog.Title = "Chọn hình";
             OpenFile_dialog.Multiselect = false;
 
             // Set filter options and filter index.
@@ -595,7 +595,7 @@ namespace Esgis_Paint
         {
             if (drawing)
             {
-                DialogResult exitresult = MessageBox.Show("Un dessin est en cours ! Voulez-vous l'enregistrer ?", "Enregistrer ? ", MessageBoxButtons.YesNo);
+                DialogResult exitresult = MessageBox.Show("Một bản vẽ đang được tiến hành! Bạn có muốn lưu nó không?", "Lưu? ", MessageBoxButtons.YesNo);
 
                 if (exitresult == DialogResult.Yes) //Saving the skecth is user is ok
                 {
@@ -619,7 +619,7 @@ namespace Esgis_Paint
             if (printDialog1.ShowDialog() == DialogResult.OK)
             {
                 printDocument1.Print();
-                log.WriteToLogFile("print", "Temp. unsaved Sketch");
+                log.WriteToLogFile("In", "Phác thato tạm thời chưa lưu");
             }
         }
         /// <summary>
@@ -681,7 +681,7 @@ namespace Esgis_Paint
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Impossible d'imprimer un dessin vide");
+                MessageBox.Show("Không thể in một bản vẽ trống");
             }
 
             e.Graphics.DrawImage(bitm, 0, 0);
