@@ -14,7 +14,7 @@ namespace Esgis_Paint
         public AboutBox1()
         {
             InitializeComponent();
-            this.Text = String.Format("À propos de {0}", AssemblyTitle);
+            this.Text = String.Format("Về chúng tôi {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
             this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
             this.labelCopyright.Text = AssemblyCopyright;
