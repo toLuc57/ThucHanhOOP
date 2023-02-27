@@ -137,6 +137,13 @@
     <None Include="Resources\Rotate Left_52px.png" />
     <None Include="Resources\Save_32px.png" />
     <None Include="Resources\More_32px_7.png" />
+    <None Include="Resources\icons8-fill-color-32.png" />
+    <None Include="Resources\icons8-line-32.png" />
+    <None Include="Resources\icons8-redo-32.png" />
+    <None Include="Resources\icons8-undo-32.png" />
+    <None Include="Resources\icons8-refresh-32.png" />
+    <None Include="Resources\icons8-rotate-left-32.png" />
+    <None Include="Resources\icons8-rotate-right-32.png" />
     <Content Include="screenshots\screenshot_1.jpg" />
     <None Include="README.md" />
     <None Include="Resources\Africa_32px.png" />

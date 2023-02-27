@@ -13,6 +13,8 @@ namespace Esgis_Paint.Models
         Rect,
         Ellipse,
         Line,
-        SpecialForm
+        SpecialForm,
+        Fill,
+        Triangle
     }
 }
