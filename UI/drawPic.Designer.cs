@@ -31,14 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(drawPic));
             this.button1 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ouvrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.enregistrerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dessinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.effacerToutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.numericUpDown_Epaisseur = new System.Windows.Forms.NumericUpDown();
             this.groupBox_Epaisseur = new System.Windows.Forms.GroupBox();
             this.groupBox_Couleur = new System.Windows.Forms.GroupBox();
@@ -82,7 +74,12 @@
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnRedo = new System.Windows.Forms.Button();
             this.groupBox_Toolbar = new System.Windows.Forms.GroupBox();
-            this.menuStrip1.SuspendLayout();
+            this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ouvrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.enregistrerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.imprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).BeginInit();
             this.groupBox_Epaisseur.SuspendLayout();
             this.groupBox_Couleur.SuspendLayout();
@@ -108,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox_Toolbar.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -121,74 +119,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem,
-            this.dessinToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1336, 28);
-            this.menuStrip1.TabIndex = 6;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fichierToolStripMenuItem
-            // 
-            this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ouvrirToolStripMenuItem,
-            this.enregistrerToolStripMenuItem,
-            this.imprimerToolStripMenuItem,
-            this.quitterToolStripMenuItem});
-            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
-            this.fichierToolStripMenuItem.Text = "Tệp";
-            this.fichierToolStripMenuItem.Click += new System.EventHandler(this.fichierToolStripMenuItem_Click);
-            // 
-            // ouvrirToolStripMenuItem
-            // 
-            this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.ouvrirToolStripMenuItem.Text = "Mở hình ảnh";
-            this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
-            // 
-            // enregistrerToolStripMenuItem
-            // 
-            this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
-            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.enregistrerToolStripMenuItem.Text = "Lưu";
-            this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
-            // 
-            // imprimerToolStripMenuItem
-            // 
-            this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
-            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.imprimerToolStripMenuItem.Text = "In";
-            this.imprimerToolStripMenuItem.Click += new System.EventHandler(this.imprimerToolStripMenuItem_Click);
-            // 
-            // quitterToolStripMenuItem
-            // 
-            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.quitterToolStripMenuItem.Text = "Thoát";
-            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
-            // 
-            // dessinToolStripMenuItem
-            // 
-            this.dessinToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.effacerToutToolStripMenuItem});
-            this.dessinToolStripMenuItem.Name = "dessinToolStripMenuItem";
-            this.dessinToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
-            this.dessinToolStripMenuItem.Text = "Thiết kế";
-            this.dessinToolStripMenuItem.Click += new System.EventHandler(this.dessinToolStripMenuItem_Click);
-            // 
-            // effacerToutToolStripMenuItem
-            // 
-            this.effacerToutToolStripMenuItem.Name = "effacerToutToolStripMenuItem";
-            this.effacerToutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.effacerToutToolStripMenuItem.Text = "Đặt lại tất cả";
-            this.effacerToutToolStripMenuItem.Click += new System.EventHandler(this.effacerToutToolStripMenuItem_Click);
             // 
             // numericUpDown_Epaisseur
             // 
@@ -740,6 +670,57 @@
             this.groupBox_Toolbar.TabStop = false;
             this.groupBox_Toolbar.Text = "Toolbar";
             // 
+            // fichierToolStripMenuItem
+            // 
+            this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ouvrirToolStripMenuItem,
+            this.enregistrerToolStripMenuItem,
+            this.imprimerToolStripMenuItem,
+            this.quitterToolStripMenuItem});
+            this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fichierToolStripMenuItem.Text = "Tệp";
+            this.fichierToolStripMenuItem.Click += new System.EventHandler(this.fichierToolStripMenuItem_Click);
+            // 
+            // ouvrirToolStripMenuItem
+            // 
+            this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.ouvrirToolStripMenuItem.Text = "Mở hình ảnh";
+            this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
+            // 
+            // enregistrerToolStripMenuItem
+            // 
+            this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
+            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.enregistrerToolStripMenuItem.Text = "Lưu";
+            this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
+            // 
+            // imprimerToolStripMenuItem
+            // 
+            this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
+            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.imprimerToolStripMenuItem.Text = "In";
+            this.imprimerToolStripMenuItem.Click += new System.EventHandler(this.imprimerToolStripMenuItem_Click);
+            // 
+            // quitterToolStripMenuItem
+            // 
+            this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.quitterToolStripMenuItem.Text = "Thoát";
+            this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fichierToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1336, 28);
+            this.menuStrip1.TabIndex = 6;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
             // drawPic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -764,8 +745,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dessiner";
             this.Load += new System.EventHandler(this.drawPic_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).EndInit();
             this.groupBox_Epaisseur.ResumeLayout(false);
             this.groupBox_Couleur.ResumeLayout(false);
@@ -793,6 +772,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox_Toolbar.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -806,12 +787,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem enregistrerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dessinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem effacerToutToolStripMenuItem;
         private System.Windows.Forms.NumericUpDown numericUpDown_Epaisseur;
         private System.Windows.Forms.GroupBox groupBox_Epaisseur;
         private System.Windows.Forms.GroupBox groupBox_Couleur;
@@ -833,10 +808,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btn_clear;
         private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.ToolStripMenuItem ouvrirToolStripMenuItem;
         private System.Windows.Forms.PictureBox picRect;
         private System.Windows.Forms.PictureBox picEllipse;
-        private System.Windows.Forms.ToolStripMenuItem imprimerToolStripMenuItem;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
@@ -853,5 +826,11 @@
         private System.Windows.Forms.Button btnRedo;
         private System.Windows.Forms.Button btnReplay;
         private System.Windows.Forms.GroupBox groupBox_Toolbar;
+        private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ouvrirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem enregistrerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem imprimerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
     }
 }
