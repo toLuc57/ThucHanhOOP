@@ -352,7 +352,9 @@ namespace Esgis_Paint
             for (int i = 0; i < count; ++i)
             {
                 Application.DoEvents();
-                Thread.Sleep(1000);
+                decimal replay_decimal = numericspeedUpDown.Value * 1000;
+                int replay = (int) replay_decimal;
+                Thread.Sleep(replay);
                 undoStack.Push((Bitmap)bm.Clone());
                 bm = redoStack.Pop(); ;
                 g = Graphics.FromImage(bm);

@@ -80,6 +80,8 @@
             this.imprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numericspeedUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).BeginInit();
             this.groupBox_Epaisseur.SuspendLayout();
             this.groupBox_Couleur.SuspendLayout();
@@ -106,6 +108,8 @@
             this.panel1.SuspendLayout();
             this.groupBox_Toolbar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericspeedUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -475,6 +479,7 @@
             // groupBox_Fichier
             // 
             this.groupBox_Fichier.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Fichier.Controls.Add(this.groupBox2);
             this.groupBox_Fichier.Controls.Add(this.btnReplay);
             this.groupBox_Fichier.Controls.Add(this.btn_print);
             this.groupBox_Fichier.Controls.Add(this.btn_close);
@@ -484,7 +489,7 @@
             this.groupBox_Fichier.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Fichier.Name = "groupBox_Fichier";
             this.groupBox_Fichier.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Fichier.Size = new System.Drawing.Size(137, 280);
+            this.groupBox_Fichier.Size = new System.Drawing.Size(137, 350);
             this.groupBox_Fichier.TabIndex = 18;
             this.groupBox_Fichier.TabStop = false;
             this.groupBox_Fichier.Text = "Tệp";
@@ -596,11 +601,11 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label_Info);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1128, 663);
+            this.groupBox1.Location = new System.Drawing.Point(1128, 721);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(137, 107);
+            this.groupBox1.Size = new System.Drawing.Size(137, 49);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fichier";
@@ -678,35 +683,35 @@
             this.imprimerToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
             this.fichierToolStripMenuItem.Text = "Tệp";
             this.fichierToolStripMenuItem.Click += new System.EventHandler(this.fichierToolStripMenuItem_Click);
             // 
             // ouvrirToolStripMenuItem
             // 
             this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.ouvrirToolStripMenuItem.Text = "Mở hình ảnh";
             this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
             // 
             // enregistrerToolStripMenuItem
             // 
             this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
-            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.enregistrerToolStripMenuItem.Text = "Lưu";
             this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
             // 
             // imprimerToolStripMenuItem
             // 
             this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
-            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.imprimerToolStripMenuItem.Text = "In";
             this.imprimerToolStripMenuItem.Click += new System.EventHandler(this.imprimerToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
             this.quitterToolStripMenuItem.Text = "Thoát";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -720,6 +725,46 @@
             this.menuStrip1.Size = new System.Drawing.Size(1336, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.numericspeedUpDown);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(9, 262);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(119, 80);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tốc độ";
+            // 
+            // numericspeedUpDown
+            // 
+            this.numericspeedUpDown.DecimalPlaces = 2;
+            this.numericspeedUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericspeedUpDown.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.numericspeedUpDown.Location = new System.Drawing.Point(13, 32);
+            this.numericspeedUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.numericspeedUpDown.Minimum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.numericspeedUpDown.Name = "numericspeedUpDown";
+            this.numericspeedUpDown.Size = new System.Drawing.Size(99, 38);
+            this.numericspeedUpDown.TabIndex = 14;
+            this.numericspeedUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericspeedUpDown.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
             // 
             // drawPic
             // 
@@ -774,6 +819,8 @@
             this.groupBox_Toolbar.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericspeedUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -832,5 +879,7 @@
         private System.Windows.Forms.ToolStripMenuItem imprimerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.NumericUpDown numericspeedUpDown;
     }
 }
