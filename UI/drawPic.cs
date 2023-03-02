@@ -480,8 +480,8 @@ namespace Esgis_Paint
                 {
                     Rectangle shape = GetRect();
                     Point pointA = new Point(shape.X + shape.Width / 2, shape.Y);
-                    Point pointB = new Point(shape.X, shape.Y + shape.Width);
-                    Point pointC = new Point(shape.X + shape.Width, shape.Y + shape.Width);
+                    Point pointB = new Point(shape.X, shape.Y + shape.Height);
+                    Point pointC = new Point(shape.X + shape.Width, shape.Y + shape.Height);
 
                     // Draw triange
                     g.DrawLine(pen, pointA, pointB);
