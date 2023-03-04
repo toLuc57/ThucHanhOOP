@@ -263,6 +263,26 @@ namespace Esgis_Paint.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_flip_horizontal_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-flip-horizontal-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_flip_vertical_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-flip-vertical-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_line_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-line-32", resourceCulture);
