@@ -164,20 +164,37 @@ namespace Esgis_Paint
         }
 
         private void btn_RotateLeft_Click(object sender, EventArgs e)
-        {            
+        {
+            UpdateActions();
             bm.RotateFlip(RotateFlipType.Rotate270FlipNone);
-            pic.Image = bm;
+            pic.Image = bm;            
         }
 
         private void btn_RotateRight_Click(object sender, EventArgs e)
         {
-            bm.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            UpdateActions();
+            bm.RotateFlip(RotateFlipType.Rotate90FlipNone);            
+            pic.Image = bm;
+            
+        }
+        private void btn_flipVertical_Click(object sender, EventArgs e)
+        {
+            UpdateActions();
+            bm.RotateFlip(RotateFlipType.RotateNoneFlipX);
+            pic.Image = bm;
+            
+        }
+
+        private void btn_flipHorizontal_Click(object sender, EventArgs e)
+        {
+            UpdateActions();
+            bm.RotateFlip(RotateFlipType.RotateNoneFlipY);
             pic.Image = bm;
         }
 
         #endregion
 
-        #region GROUPBOX : Formes
+        #region GROUPBOX : Form
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -249,7 +266,7 @@ namespace Esgis_Paint
 
         #endregion
 
-        #region GROUPBOX : Couleurs
+        #region GROUPBOX : Color
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -388,9 +405,7 @@ namespace Esgis_Paint
             drawing = true;
             change = true;
 
-            undoStack.Push((Bitmap)bm.Clone());
-            redoStack.Clear();
-            
+            UpdateActions();           
         }
 
         private void pic_MouseUp(object sender, MouseEventArgs e)
@@ -505,21 +520,11 @@ namespace Esgis_Paint
         #endregion
 
         #region MENU
-
-        private void fichierToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void enregistrerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveSketch();
-        }
-
-        private void annulerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        }        
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -542,26 +547,44 @@ namespace Esgis_Paint
             }
         }
 
-        private void dessinToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            OpenPicture();
         }
 
-        private void nouveauToolStripMenuItem_Click(object sender, EventArgs e)
+        private void imprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            PrintSketch();
         }
 
-        private void effacerToutToolStripMenuItem_Click(object sender, EventArgs e)
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            allPoints = new List<Point>();
-            allSpecialForms = new List<SpecialForm>();
-            pic.Invalidate();
+            Bitmap bitm = new Bitmap(pic.Width, pic.Height);
+            try
+            {
+                //Draw all point to Graphics
+                e.Graphics.DrawLines(pen, allPoints.ToArray());
+
+                //Drawing Images to Graphics
+                foreach (var item in allSpecialForms)
+                {
+                    e.Graphics.DrawImage(item._Image, item._Point);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Không thể in một bản vẽ trống");
+            }
+
+            e.Graphics.DrawImage(bitm, 0, 0);
+            bitm.Dispose();
         }
 
-        private void nouveauDessinToolStripMenuItem_Click(object sender, EventArgs e)
+        private void versionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AboutBox1 ab = new AboutBox1();
+            ab.Show();
         }
 
         #endregion
@@ -668,7 +691,6 @@ namespace Esgis_Paint
                 bm = new Bitmap(pictureObj, pic.Width, pic.Height);
                 g = Graphics.FromImage(bm);
                 pic.Image = bm;
-                this.Text = img.FullName;
             }
         }
 
@@ -806,45 +828,14 @@ namespace Esgis_Paint
                 }
             }
         }
-
-        #endregion
-
-        #region MENU
-
-        private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            OpenPicture();
+        /// <summary>
+        /// Update the list of actions.
+        /// </summary>
+        private void UpdateActions(){
+            undoStack.Push((Bitmap)bm.Clone());
+            redoStack.Clear();
         }
+        #endregion    
 
-        private void imprimerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PrintSketch();
-        }
-
-        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-        {
-            Bitmap bitm = new Bitmap(pic.Width, pic.Height);
-            try
-            {
-                //Draw all point to Graphics
-                e.Graphics.DrawLines(pen, allPoints.ToArray());
-
-                //Drawing Images to Graphics
-                foreach (var item in allSpecialForms)
-                {
-                    e.Graphics.DrawImage(item._Image, item._Point);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Không thể in một bản vẽ trống");
-            }
-
-            e.Graphics.DrawImage(bitm, 0, 0);
-            bitm.Dispose();
-        }
-
-        #endregion
     }
 }

@@ -43,6 +43,8 @@
             this.pictureBox_Color4 = new System.Windows.Forms.PictureBox();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox_Outils = new System.Windows.Forms.GroupBox();
+            this.btnflipVertical = new System.Windows.Forms.Button();
+            this.btnflipHorizontal = new System.Windows.Forms.Button();
             this.btnFill = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_RotateRight = new System.Windows.Forms.Button();
@@ -59,6 +61,8 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox_Fichier = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.numericspeedUpDown = new System.Windows.Forms.NumericUpDown();
             this.btnReplay = new System.Windows.Forms.Button();
             this.btn_print = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
@@ -80,8 +84,7 @@
             this.imprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.numericspeedUpDown = new System.Windows.Forms.NumericUpDown();
+            this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).BeginInit();
             this.groupBox_Epaisseur.SuspendLayout();
             this.groupBox_Couleur.SuspendLayout();
@@ -103,13 +106,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox_Fichier.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericspeedUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox_Toolbar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericspeedUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -140,7 +143,7 @@
             this.groupBox_Epaisseur.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox_Epaisseur.Controls.Add(this.numericUpDown_Epaisseur);
             this.groupBox_Epaisseur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Epaisseur.Location = new System.Drawing.Point(1128, 46);
+            this.groupBox_Epaisseur.Location = new System.Drawing.Point(1128, 50);
             this.groupBox_Epaisseur.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Epaisseur.Name = "groupBox_Epaisseur";
             this.groupBox_Epaisseur.Padding = new System.Windows.Forms.Padding(4);
@@ -162,7 +165,7 @@
             this.groupBox_Couleur.Controls.Add(this.pictureBox_Color4);
             this.groupBox_Couleur.Controls.Add(this.button3);
             this.groupBox_Couleur.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Couleur.Location = new System.Drawing.Point(1128, 143);
+            this.groupBox_Couleur.Location = new System.Drawing.Point(1128, 147);
             this.groupBox_Couleur.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Couleur.Name = "groupBox_Couleur";
             this.groupBox_Couleur.Padding = new System.Windows.Forms.Padding(4);
@@ -271,6 +274,8 @@
             // groupBox_Outils
             // 
             this.groupBox_Outils.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Outils.Controls.Add(this.btnflipVertical);
+            this.groupBox_Outils.Controls.Add(this.btnflipHorizontal);
             this.groupBox_Outils.Controls.Add(this.btnFill);
             this.groupBox_Outils.Controls.Add(this.btn_clear);
             this.groupBox_Outils.Controls.Add(this.btn_RotateRight);
@@ -278,19 +283,41 @@
             this.groupBox_Outils.Controls.Add(this.btn_pencil);
             this.groupBox_Outils.Controls.Add(this.btn_eraser);
             this.groupBox_Outils.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Outils.Location = new System.Drawing.Point(37, 140);
+            this.groupBox_Outils.Location = new System.Drawing.Point(37, 127);
             this.groupBox_Outils.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Outils.Name = "groupBox_Outils";
             this.groupBox_Outils.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Outils.Size = new System.Drawing.Size(108, 369);
+            this.groupBox_Outils.Size = new System.Drawing.Size(108, 469);
             this.groupBox_Outils.TabIndex = 17;
             this.groupBox_Outils.TabStop = false;
             this.groupBox_Outils.Text = "Công cụ";
             // 
+            // btnflipVertical
+            // 
+            this.btnflipVertical.Image = global::Esgis_Paint.Properties.Resources.icons8_flip_vertical_32;
+            this.btnflipVertical.Location = new System.Drawing.Point(21, 249);
+            this.btnflipVertical.Margin = new System.Windows.Forms.Padding(4);
+            this.btnflipVertical.Name = "btnflipVertical";
+            this.btnflipVertical.Size = new System.Drawing.Size(60, 46);
+            this.btnflipVertical.TabIndex = 22;
+            this.btnflipVertical.UseVisualStyleBackColor = true;
+            this.btnflipVertical.Click += new System.EventHandler(this.btn_flipVertical_Click);
+            // 
+            // btnflipHorizontal
+            // 
+            this.btnflipHorizontal.Image = global::Esgis_Paint.Properties.Resources.icons8_flip_horizontal_32;
+            this.btnflipHorizontal.Location = new System.Drawing.Point(21, 303);
+            this.btnflipHorizontal.Margin = new System.Windows.Forms.Padding(4);
+            this.btnflipHorizontal.Name = "btnflipHorizontal";
+            this.btnflipHorizontal.Size = new System.Drawing.Size(60, 46);
+            this.btnflipHorizontal.TabIndex = 21;
+            this.btnflipHorizontal.UseVisualStyleBackColor = true;
+            this.btnflipHorizontal.Click += new System.EventHandler(this.btn_flipHorizontal_Click);
+            // 
             // btnFill
             // 
             this.btnFill.Image = global::Esgis_Paint.Properties.Resources.icons8_fill_color_32;
-            this.btnFill.Location = new System.Drawing.Point(21, 250);
+            this.btnFill.Location = new System.Drawing.Point(21, 361);
             this.btnFill.Margin = new System.Windows.Forms.Padding(4);
             this.btnFill.Name = "btnFill";
             this.btnFill.Size = new System.Drawing.Size(60, 46);
@@ -304,7 +331,7 @@
             this.btn_clear.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.btn_clear.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_clear.ForeColor = System.Drawing.Color.DarkOrange;
-            this.btn_clear.Location = new System.Drawing.Point(13, 315);
+            this.btn_clear.Location = new System.Drawing.Point(13, 415);
             this.btn_clear.Margin = new System.Windows.Forms.Padding(4);
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.Size = new System.Drawing.Size(79, 46);
@@ -316,7 +343,7 @@
             // btn_RotateRight
             // 
             this.btn_RotateRight.Image = global::Esgis_Paint.Properties.Resources.icons8_rotate_right_32;
-            this.btn_RotateRight.Location = new System.Drawing.Point(21, 196);
+            this.btn_RotateRight.Location = new System.Drawing.Point(21, 195);
             this.btn_RotateRight.Margin = new System.Windows.Forms.Padding(4);
             this.btn_RotateRight.Name = "btn_RotateRight";
             this.btn_RotateRight.Size = new System.Drawing.Size(60, 46);
@@ -327,7 +354,7 @@
             // btn_RotateLeft
             // 
             this.btn_RotateLeft.Image = global::Esgis_Paint.Properties.Resources.icons8_rotate_left_32;
-            this.btn_RotateLeft.Location = new System.Drawing.Point(21, 143);
+            this.btn_RotateLeft.Location = new System.Drawing.Point(21, 141);
             this.btn_RotateLeft.Margin = new System.Windows.Forms.Padding(4);
             this.btn_RotateLeft.Name = "btn_RotateLeft";
             this.btn_RotateLeft.Size = new System.Drawing.Size(60, 46);
@@ -350,7 +377,7 @@
             // btn_eraser
             // 
             this.btn_eraser.Image = global::Esgis_Paint.Properties.Resources.Erase_32px;
-            this.btn_eraser.Location = new System.Drawing.Point(21, 89);
+            this.btn_eraser.Location = new System.Drawing.Point(21, 87);
             this.btn_eraser.Margin = new System.Windows.Forms.Padding(4);
             this.btn_eraser.Name = "btn_eraser";
             this.btn_eraser.Size = new System.Drawing.Size(60, 46);
@@ -371,11 +398,11 @@
             this.groupBox_Formes.Controls.Add(this.pictureBox5);
             this.groupBox_Formes.Controls.Add(this.pictureBox1);
             this.groupBox_Formes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Formes.Location = new System.Drawing.Point(37, 517);
+            this.groupBox_Formes.Location = new System.Drawing.Point(37, 604);
             this.groupBox_Formes.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Formes.Name = "groupBox_Formes";
             this.groupBox_Formes.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Formes.Size = new System.Drawing.Size(129, 253);
+            this.groupBox_Formes.Size = new System.Drawing.Size(129, 234);
             this.groupBox_Formes.TabIndex = 17;
             this.groupBox_Formes.TabStop = false;
             this.groupBox_Formes.Text = "Hình dạng";
@@ -485,7 +512,7 @@
             this.groupBox_Fichier.Controls.Add(this.btn_close);
             this.groupBox_Fichier.Controls.Add(this.btn_save);
             this.groupBox_Fichier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Fichier.Location = new System.Drawing.Point(1128, 363);
+            this.groupBox_Fichier.Location = new System.Drawing.Point(1128, 367);
             this.groupBox_Fichier.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Fichier.Name = "groupBox_Fichier";
             this.groupBox_Fichier.Padding = new System.Windows.Forms.Padding(4);
@@ -493,6 +520,46 @@
             this.groupBox_Fichier.TabIndex = 18;
             this.groupBox_Fichier.TabStop = false;
             this.groupBox_Fichier.Text = "Tệp";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox2.Controls.Add(this.numericspeedUpDown);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(9, 262);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(119, 80);
+            this.groupBox2.TabIndex = 16;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Tốc độ";
+            // 
+            // numericspeedUpDown
+            // 
+            this.numericspeedUpDown.DecimalPlaces = 2;
+            this.numericspeedUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericspeedUpDown.Increment = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.numericspeedUpDown.Location = new System.Drawing.Point(13, 32);
+            this.numericspeedUpDown.Margin = new System.Windows.Forms.Padding(4);
+            this.numericspeedUpDown.Minimum = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
+            this.numericspeedUpDown.Name = "numericspeedUpDown";
+            this.numericspeedUpDown.Size = new System.Drawing.Size(99, 38);
+            this.numericspeedUpDown.TabIndex = 14;
+            this.numericspeedUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.numericspeedUpDown.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            131072});
             // 
             // btnReplay
             // 
@@ -601,7 +668,7 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label_Info);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1128, 721);
+            this.groupBox1.Location = new System.Drawing.Point(1128, 725);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -616,8 +683,7 @@
             this.pic.Cursor = System.Windows.Forms.Cursors.Cross;
             this.pic.Location = new System.Drawing.Point(3, 3);
             this.pic.Name = "pic";
-            this.pic.Size = new System.Drawing.Size(914, 709);
-            this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pic.Size = new System.Drawing.Size(914, 757);
             this.pic.TabIndex = 0;
             this.pic.TabStop = false;
             this.pic.Paint += new System.Windows.Forms.PaintEventHandler(this.pic_Paint);
@@ -633,10 +699,10 @@
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pic);
-            this.panel1.Location = new System.Drawing.Point(175, 53);
+            this.panel1.Location = new System.Drawing.Point(175, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(922, 717);
+            this.panel1.Size = new System.Drawing.Size(922, 770);
             this.panel1.TabIndex = 5;
             // 
             // btnUndo
@@ -668,7 +734,7 @@
             this.groupBox_Toolbar.Controls.Add(this.btnUndo);
             this.groupBox_Toolbar.Controls.Add(this.btnRedo);
             this.groupBox_Toolbar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.groupBox_Toolbar.Location = new System.Drawing.Point(5, 46);
+            this.groupBox_Toolbar.Location = new System.Drawing.Point(5, 34);
             this.groupBox_Toolbar.Name = "groupBox_Toolbar";
             this.groupBox_Toolbar.Size = new System.Drawing.Size(124, 86);
             this.groupBox_Toolbar.TabIndex = 1;
@@ -683,35 +749,34 @@
             this.imprimerToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
-            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(48, 24);
+            this.fichierToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fichierToolStripMenuItem.Text = "Tệp";
-            this.fichierToolStripMenuItem.Click += new System.EventHandler(this.fichierToolStripMenuItem_Click);
             // 
             // ouvrirToolStripMenuItem
             // 
             this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.ouvrirToolStripMenuItem.Text = "Mở hình ảnh";
             this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
             // 
             // enregistrerToolStripMenuItem
             // 
             this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
-            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.enregistrerToolStripMenuItem.Text = "Lưu";
             this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
             // 
             // imprimerToolStripMenuItem
             // 
             this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
-            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.imprimerToolStripMenuItem.Text = "In";
             this.imprimerToolStripMenuItem.Click += new System.EventHandler(this.imprimerToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(174, 26);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.quitterToolStripMenuItem.Text = "Thoát";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -719,52 +784,20 @@
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fichierToolStripMenuItem});
+            this.fichierToolStripMenuItem,
+            this.versionToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1336, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // groupBox2
+            // versionToolStripMenuItem
             // 
-            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox2.Controls.Add(this.numericspeedUpDown);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(9, 262);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(119, 80);
-            this.groupBox2.TabIndex = 16;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Tốc độ";
-            // 
-            // numericspeedUpDown
-            // 
-            this.numericspeedUpDown.DecimalPlaces = 2;
-            this.numericspeedUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericspeedUpDown.Increment = new decimal(new int[] {
-            25,
-            0,
-            0,
-            131072});
-            this.numericspeedUpDown.Location = new System.Drawing.Point(13, 32);
-            this.numericspeedUpDown.Margin = new System.Windows.Forms.Padding(4);
-            this.numericspeedUpDown.Minimum = new decimal(new int[] {
-            25,
-            0,
-            0,
-            131072});
-            this.numericspeedUpDown.Name = "numericspeedUpDown";
-            this.numericspeedUpDown.Size = new System.Drawing.Size(99, 38);
-            this.numericspeedUpDown.TabIndex = 14;
-            this.numericspeedUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericspeedUpDown.Value = new decimal(new int[] {
-            25,
-            0,
-            0,
-            131072});
+            this.versionToolStripMenuItem.Name = "versionToolStripMenuItem";
+            this.versionToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
+            this.versionToolStripMenuItem.Text = "Phiên bản";
+            this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
             // 
             // drawPic
             // 
@@ -772,7 +805,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(1336, 785);
+            this.ClientSize = new System.Drawing.Size(1336, 969);
             this.Controls.Add(this.groupBox_Toolbar);
             this.Controls.Add(this.groupBox_Formes);
             this.Controls.Add(this.groupBox_Couleur);
@@ -788,7 +821,7 @@
             this.MaximizeBox = false;
             this.Name = "drawPic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dessiner";
+            this.Text = "Paint";
             this.Load += new System.EventHandler(this.drawPic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).EndInit();
             this.groupBox_Epaisseur.ResumeLayout(false);
@@ -811,16 +844,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox_Fichier.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.numericspeedUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.groupBox_Toolbar.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericspeedUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -881,5 +913,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.NumericUpDown numericspeedUpDown;
+        private System.Windows.Forms.Button btnflipVertical;
+        private System.Windows.Forms.Button btnflipHorizontal;
+        private System.Windows.Forms.ToolStripMenuItem versionToolStripMenuItem;
     }
 }
