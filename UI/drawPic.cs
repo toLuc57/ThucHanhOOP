@@ -73,7 +73,6 @@ namespace Esgis_Paint
             numericUpDown_Epaisseur.Value = pen_width;
             numericUpDown_Epaisseur.Increment = 3;
 
-
             #region COLORS OF COLOR GROUPBOX
             pictureBox_ColorActual.BackColor = pen.Color;
             pictureBox_Color1.BackColor = Color.White;
@@ -98,6 +97,12 @@ namespace Esgis_Paint
             
             groupBox1.Enabled = false;
             groupBox1.Visible = false;
+        }
+
+        private void drawPic_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            btn_close_Click(sender, null);
         }
 
         #region GROUPBOX: TOOLBAR
@@ -347,9 +352,13 @@ namespace Esgis_Paint
 
                 if (exitresult == DialogResult.Yes) //Saving the skecth is user is ok
                 {
-                    SaveSketch();
+                    bool isClosed = SaveSketch();
+                    if (isClosed)
+                    {
+                        Dispose();
+                    }
+                    return;
                 }
-
                 Dispose();
             }
         }
@@ -635,8 +644,11 @@ namespace Esgis_Paint
             state = DrawingState.SpecialForm;
             Specialform_IMG = img;
         }
-
-        private void SaveSketch()
+        /// <summary>
+        /// Save the file and close the app if asked before 
+        /// </summary>
+        /// <returns></returns>
+        private bool SaveSketch()
         {
             SaveFileDialog saveDialog = new SaveFileDialog();
 
@@ -650,13 +662,14 @@ namespace Esgis_Paint
                     bm.Save(saveDialog.FileName);
                     log.WriteToLogFile("pic_save", saveDialog.FileName);
                     change = false;
+                    return true;
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show("Không thể lưu bản vẽ trống!!");
             }
-            
+            return false;            
         }
 
         /// <summary>
@@ -835,7 +848,6 @@ namespace Esgis_Paint
             undoStack.Push((Bitmap)bm.Clone());
             redoStack.Clear();
         }
-        #endregion    
-
+        #endregion
     }
 }

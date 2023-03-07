@@ -822,6 +822,7 @@
             this.Name = "drawPic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Paint";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.drawPic_FormClosing);
             this.Load += new System.EventHandler(this.drawPic_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).EndInit();
             this.groupBox_Epaisseur.ResumeLayout(false);
