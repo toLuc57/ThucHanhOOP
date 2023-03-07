@@ -64,7 +64,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.numericspeedUpDown = new System.Windows.Forms.NumericUpDown();
             this.btnReplay = new System.Windows.Forms.Button();
-            this.btn_print = new System.Windows.Forms.Button();
             this.btn_close = new System.Windows.Forms.Button();
             this.btn_save = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -508,7 +507,6 @@
             this.groupBox_Fichier.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox_Fichier.Controls.Add(this.groupBox2);
             this.groupBox_Fichier.Controls.Add(this.btnReplay);
-            this.groupBox_Fichier.Controls.Add(this.btn_print);
             this.groupBox_Fichier.Controls.Add(this.btn_close);
             this.groupBox_Fichier.Controls.Add(this.btn_save);
             this.groupBox_Fichier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -516,7 +514,7 @@
             this.groupBox_Fichier.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Fichier.Name = "groupBox_Fichier";
             this.groupBox_Fichier.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox_Fichier.Size = new System.Drawing.Size(137, 350);
+            this.groupBox_Fichier.Size = new System.Drawing.Size(137, 286);
             this.groupBox_Fichier.TabIndex = 18;
             this.groupBox_Fichier.TabStop = false;
             this.groupBox_Fichier.Text = "Tệp";
@@ -526,7 +524,7 @@
             this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.Controls.Add(this.numericspeedUpDown);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(9, 262);
+            this.groupBox2.Location = new System.Drawing.Point(6, 198);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
@@ -566,7 +564,7 @@
             this.btnReplay.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReplay.Image = global::Esgis_Paint.Properties.Resources.icons8_refresh_32;
             this.btnReplay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReplay.Location = new System.Drawing.Point(8, 212);
+            this.btnReplay.Location = new System.Drawing.Point(8, 145);
             this.btnReplay.Margin = new System.Windows.Forms.Padding(4);
             this.btnReplay.Name = "btnReplay";
             this.btnReplay.Size = new System.Drawing.Size(119, 50);
@@ -576,27 +574,12 @@
             this.btnReplay.UseVisualStyleBackColor = true;
             this.btnReplay.Click += new System.EventHandler(this.btnReplay_Click);
             // 
-            // btn_print
-            // 
-            this.btn_print.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_print.Image = global::Esgis_Paint.Properties.Resources.Print_32px;
-            this.btn_print.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_print.Location = new System.Drawing.Point(8, 41);
-            this.btn_print.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_print.Name = "btn_print";
-            this.btn_print.Size = new System.Drawing.Size(119, 50);
-            this.btn_print.TabIndex = 6;
-            this.btn_print.Text = "In";
-            this.btn_print.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_print.UseVisualStyleBackColor = true;
-            this.btn_print.Click += new System.EventHandler(this.btn_print_Click);
-            // 
             // btn_close
             // 
             this.btn_close.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_close.Image = global::Esgis_Paint.Properties.Resources.Cancel_32px;
             this.btn_close.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_close.Location = new System.Drawing.Point(8, 154);
+            this.btn_close.Location = new System.Drawing.Point(8, 87);
             this.btn_close.Margin = new System.Windows.Forms.Padding(4);
             this.btn_close.Name = "btn_close";
             this.btn_close.Size = new System.Drawing.Size(119, 50);
@@ -611,7 +594,7 @@
             this.btn_save.Font = new System.Drawing.Font("Verdana", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_save.Image = global::Esgis_Paint.Properties.Resources.Save_32px;
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_save.Location = new System.Drawing.Point(8, 96);
+            this.btn_save.Location = new System.Drawing.Point(8, 29);
             this.btn_save.Margin = new System.Windows.Forms.Padding(4);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(119, 50);
@@ -893,7 +876,6 @@
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
-        private System.Windows.Forms.Button btn_print;
         private System.Windows.Forms.Label label_Info;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pic;

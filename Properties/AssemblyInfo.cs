@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // Les informations générales relatives à un assembly dépendent de
 // l'ensemble d'attributs suivant. Changez les valeurs de ces attributs pour modifier les informations
 // associées à un assembly.
-[assembly: AssemblyTitle("Vẽ đẹp")]
+[assembly: AssemblyTitle("Vẽ")]
 [assembly: AssemblyDescription("Một ứng dụng vẽ đơn giản!!")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Tai, Phan, Vu ")]
+[assembly: AssemblyCompany("Tài, Phan, Vũ ")]
 [assembly: AssemblyProduct("Vẽ")]
 [assembly: AssemblyCopyright("Phiên bản ©  2023")]
 [assembly: AssemblyTrademark("")]
