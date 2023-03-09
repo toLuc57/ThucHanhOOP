@@ -28,6 +28,9 @@ namespace Esgis_Paint
         public Pen pen;
         public Pen eraser;
         bool change = false;
+        int widthZoom100;
+        int heightZoom100;
+        Image pictureObj;
 
         //Parameters that user can change
         Color pen_color;
@@ -52,6 +55,8 @@ namespace Esgis_Paint
             InitializeComponent();
             pic.Width = panel1.Width - 10;
             pic.Height = panel1.Height - 10;
+            widthZoom100 = pic.Width;
+            heightZoom100 = pic.Height;
             bm = new Bitmap(pic.Width, pic.Height);
             g = Graphics.FromImage(bm);
             g.Clear(Color.White);
@@ -322,22 +327,12 @@ namespace Esgis_Paint
         #endregion
 
         #region GROUPBOX : Fichier
-
-        private void btn_print_Click(object sender, EventArgs e)
-        {            
-            PrintSketch();
-        }
-
+        
         private void btn_save_Click(object sender, EventArgs e)
         {
             SaveSketch();
         }
-
-        private void btn_exit_Click(object sender, EventArgs e)
-        {
-            
-        }
-
+        
         private void btn_close_Click(object sender, EventArgs e)
         {
             //TODO: Put the code inside a method and call it here
@@ -537,33 +532,12 @@ namespace Esgis_Paint
 
         private void quitterToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (((allPoints.Count == 0) & (allSpecialForms.Count == 0)) || (drawing = false))
-            {
-                log.WriteToLogFile("disconnect");
-                Dispose();
-            }
-            else
-            {
-                DialogResult exitresult = MessageBox.Show("Un dessin est en cours ! Voulez-vous l'enregistrer ?", "Enregistrer ? ", MessageBoxButtons.YesNo);
-
-                if (exitresult == DialogResult.Yes) //Saving the skecth is user is ok
-                {
-                    SaveSketch();
-                }
-
-                log.WriteToLogFile("disconnect");;
-                Dispose();
-            }
+            btn_close_Click(sender, e);
         }
 
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenPicture();
-        }
-
-        private void imprimerToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            PrintSketch();
         }
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
@@ -700,10 +674,14 @@ namespace Esgis_Paint
                                 
                 img = choice_info;
                 picture_stream = img.OpenRead();
-                Image pictureObj = Image.FromStream(picture_stream);
+                pictureObj = Image.FromStream(picture_stream);
                 bm = new Bitmap(pictureObj, pic.Width, pic.Height);
                 g = Graphics.FromImage(bm);
                 pic.Image = bm;
+
+                // Clear undo and redo
+                undoStack.Clear();
+                redoStack.Clear();
             }
         }
 
@@ -732,22 +710,6 @@ namespace Esgis_Paint
 
             log.WriteToLogFile("disconnect");;
             Dispose();
-        }
-
-        /// <summary>
-        /// Print the sketch/drawing on the panel
-        /// </summary>
-        private void PrintSketch()
-        {
-            printPreviewDialog1 = new PrintPreviewDialog();
-
-            printDialog1.Document = printDocument1;
-
-            if (printDialog1.ShowDialog() == DialogResult.OK)
-            {
-                printDocument1.Print();
-                log.WriteToLogFile("In", "Phác thato tạm thời chưa lưu");
-            }
         }
 
         /// <summary>
@@ -848,6 +810,31 @@ namespace Esgis_Paint
             undoStack.Push((Bitmap)bm.Clone());
             redoStack.Clear();
         }
+
+        private void ZoomPicture(Image img, int size)
+        {
+            bm = new Bitmap(img, Convert.ToInt32(widthZoom100 * size / 3),
+                Convert.ToInt32(heightZoom100 * size / 3));
+            g = Graphics.FromImage(bm);
+        }
+
         #endregion
+
+        private void trackBar_Zoom_Scroll(object sender, EventArgs e)
+        {
+            if (trackBar_Zoom.Value != 0)
+            {
+                if(pictureObj == null)
+                {
+                    pictureObj = pic.Image;
+                }
+                ZoomPicture(pictureObj, trackBar_Zoom.Value);
+
+                pic.Image = bm;
+                pic.Width = bm.Width;
+                pic.Height = bm.Height;
+                pic.Refresh();
+            }
+        }
     }
 }

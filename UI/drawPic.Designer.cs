@@ -69,7 +69,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.label_Info = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pic = new System.Windows.Forms.PictureBox();
@@ -80,10 +79,11 @@
             this.fichierToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ouvrirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.enregistrerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.imprimerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quitterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.versionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.groupBox_Zoom = new System.Windows.Forms.GroupBox();
+            this.trackBar_Zoom = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_Epaisseur)).BeginInit();
             this.groupBox_Epaisseur.SuspendLayout();
             this.groupBox_Couleur.SuspendLayout();
@@ -112,6 +112,8 @@
             this.panel1.SuspendLayout();
             this.groupBox_Toolbar.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.groupBox_Zoom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_Zoom)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -510,7 +512,7 @@
             this.groupBox_Fichier.Controls.Add(this.btn_close);
             this.groupBox_Fichier.Controls.Add(this.btn_save);
             this.groupBox_Fichier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox_Fichier.Location = new System.Drawing.Point(1128, 367);
+            this.groupBox_Fichier.Location = new System.Drawing.Point(1128, 364);
             this.groupBox_Fichier.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox_Fichier.Name = "groupBox_Fichier";
             this.groupBox_Fichier.Padding = new System.Windows.Forms.Padding(4);
@@ -625,16 +627,6 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
             // label_Info
             // 
             this.label_Info.AutoSize = true;
@@ -651,7 +643,7 @@
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox1.Controls.Add(this.label_Info);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(1128, 725);
+            this.groupBox1.Location = new System.Drawing.Point(1128, 766);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -729,7 +721,6 @@
             this.fichierToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ouvrirToolStripMenuItem,
             this.enregistrerToolStripMenuItem,
-            this.imprimerToolStripMenuItem,
             this.quitterToolStripMenuItem});
             this.fichierToolStripMenuItem.Name = "fichierToolStripMenuItem";
             this.fichierToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
@@ -738,28 +729,21 @@
             // ouvrirToolStripMenuItem
             // 
             this.ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
-            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.ouvrirToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.ouvrirToolStripMenuItem.Text = "Mở hình ảnh";
             this.ouvrirToolStripMenuItem.Click += new System.EventHandler(this.ouvrirToolStripMenuItem_Click);
             // 
             // enregistrerToolStripMenuItem
             // 
             this.enregistrerToolStripMenuItem.Name = "enregistrerToolStripMenuItem";
-            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.enregistrerToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.enregistrerToolStripMenuItem.Text = "Lưu";
             this.enregistrerToolStripMenuItem.Click += new System.EventHandler(this.enregistrerToolStripMenuItem_Click);
-            // 
-            // imprimerToolStripMenuItem
-            // 
-            this.imprimerToolStripMenuItem.Name = "imprimerToolStripMenuItem";
-            this.imprimerToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
-            this.imprimerToolStripMenuItem.Text = "In";
-            this.imprimerToolStripMenuItem.Click += new System.EventHandler(this.imprimerToolStripMenuItem_Click);
             // 
             // quitterToolStripMenuItem
             // 
             this.quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
+            this.quitterToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.quitterToolStripMenuItem.Text = "Thoát";
             this.quitterToolStripMenuItem.Click += new System.EventHandler(this.quitterToolStripMenuItem_Click);
             // 
@@ -782,6 +766,32 @@
             this.versionToolStripMenuItem.Text = "Phiên bản";
             this.versionToolStripMenuItem.Click += new System.EventHandler(this.versionToolStripMenuItem_Click);
             // 
+            // groupBox_Zoom
+            // 
+            this.groupBox_Zoom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBox_Zoom.Controls.Add(this.trackBar_Zoom);
+            this.groupBox_Zoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox_Zoom.Location = new System.Drawing.Point(1128, 658);
+            this.groupBox_Zoom.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox_Zoom.Name = "groupBox_Zoom";
+            this.groupBox_Zoom.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox_Zoom.Size = new System.Drawing.Size(137, 100);
+            this.groupBox_Zoom.TabIndex = 20;
+            this.groupBox_Zoom.TabStop = false;
+            this.groupBox_Zoom.Text = "Zoom";
+            // 
+            // trackBar_Zoom
+            // 
+            this.trackBar_Zoom.LargeChange = 1;
+            this.trackBar_Zoom.Location = new System.Drawing.Point(19, 29);
+            this.trackBar_Zoom.Maximum = 5;
+            this.trackBar_Zoom.Minimum = 1;
+            this.trackBar_Zoom.Name = "trackBar_Zoom";
+            this.trackBar_Zoom.Size = new System.Drawing.Size(104, 56);
+            this.trackBar_Zoom.TabIndex = 0;
+            this.trackBar_Zoom.Value = 3;
+            this.trackBar_Zoom.Scroll += new System.EventHandler(this.trackBar_Zoom_Scroll);
+            // 
             // drawPic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -789,6 +799,7 @@
             this.AutoScroll = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(1336, 969);
+            this.Controls.Add(this.groupBox_Zoom);
             this.Controls.Add(this.groupBox_Toolbar);
             this.Controls.Add(this.groupBox_Formes);
             this.Controls.Add(this.groupBox_Couleur);
@@ -837,6 +848,9 @@
             this.groupBox_Toolbar.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.groupBox_Zoom.ResumeLayout(false);
+            this.groupBox_Zoom.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar_Zoom)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -875,7 +889,6 @@
         private System.Windows.Forms.PictureBox picEllipse;
         private System.Drawing.Printing.PrintDocument printDocument1;
         private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.Label label_Info;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pic;
@@ -891,7 +904,6 @@
         private System.Windows.Forms.ToolStripMenuItem fichierToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ouvrirToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem enregistrerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem imprimerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem quitterToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -899,5 +911,7 @@
         private System.Windows.Forms.Button btnflipVertical;
         private System.Windows.Forms.Button btnflipHorizontal;
         private System.Windows.Forms.ToolStripMenuItem versionToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox_Zoom;
+        private System.Windows.Forms.TrackBar trackBar_Zoom;
     }
 }
